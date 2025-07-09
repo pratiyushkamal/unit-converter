@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Unit Converter - Convert & Define Custom Units | Unitopia</title>
+    <meta name="description" content="Experience a premium, dynamic unit converter. Convert between standard and custom units effortlessly. Define your own units and conversion factors for science, engineering, or everyday use.">
+    <meta name="keywords" content="unit converter, custom units, online converter, measurement tool, science, engineering, physics, dynamic, free tool, premium converter, metric, imperial, Unitopia, ConvertoFlex, MeasureForge">
+    <meta name="author" content="pratiyush">
+
+    <meta property="og:type" content="unitopia.com">
+    <meta property="og:url" content="https://www.unitopia.com/unit-converter"> <meta property="og:title" content="Premium Unit Converter - Convert & Define Custom Units | Unitopia">
+    <meta property="og:description" content="Experience a premium, dynamic unit converter. Convert between standard and custom units effortlessly. Define your own units and conversion factors for science, engineering, or everyday use.">
+    <meta property="og:image" content="https://www.unitopia.com/images/converter-thumbnail.jpg"> <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_PUBLISHER_ID" crossorigin="anonymous"></script>
+    <style>
+        /* Basic Resets & Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary-color: #2E3A59; /* Deep Sophisticated Blue */
+            --secondary-color: #00C4B4; /* Vibrant Teal */
+            --accent-color: #FFB300; /* Warm Amber */
+            --text-color: #333A4D; /* Dark Grey for readability */
+            --light-text-color: #F8F9FA; /* Off-white for contrast */
+            --background-start-color: #EBF2F8; /* Light blueish-grey */
+            --background-end-color: #FFFFFF; /* Pure white */
+            --card-background: #FFFFFF;
+            --border-color: #E0E0E0; /* Lighter border */
+            --shadow-light: rgba(0, 0, 0, 0.08);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --shadow-strong: rgba(0, 0, 0, 0.25);
+            --breakpoint-tablet: 768px;
+            --breakpoint-desktop: 1024px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* Modern, readable body font */
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(180deg, var(--background-start-color) 0%, var(--background-end-color) 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1A253A 100%); /* Dark blue gradient */
+            color: var(--light-text-color);
+            padding: 50px 0;
+            text-align: center;
+            box-shadow: 0 6px 15px var(--shadow-medium);
+            position: relative;
+            overflow: hidden; /* For potential background patterns/shapes */
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif; /* Bold, stylish heading font */
+            font-size: 3.5em;
+            margin-bottom: 12px;
+            text-shadow: 3px 3px 6px var(--shadow-strong);
+            letter-spacing: -0.03em; /* Slightly tighter for impact */
+        }
+
+        header .tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding-top: 30px;
+            padding-bottom: 60px;
+        }
+
+        .card {
+            background-color: var(--card-background);
+            border-radius: 16px; /* More rounded corners */
+            box-shadow: 0 10px 30px var(--shadow-light); /* Stronger shadow */
+            padding: 40px;
+            margin-bottom: 40px;
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            border: 1px solid var(--border-color); /* Subtle border */
+        }
+
+        .card:hover {
+            transform: translateY(-8px); /* More pronounced lift */
+            box-shadow: 0 15px 40px var(--shadow-medium);
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            font-weight: 700; /* Bold */
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px; /* Wider accent line */
+            height: 4px; /* Thicker accent line */
+            background-color: var(--secondary-color); /* Vibrant teal accent */
+            margin: 15px auto 0;
+            border-radius: 3px;
+        }
+
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            font-size: 1.6em;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            font-weight: 600; /* Semi-bold */
+        }
+
+        /* Input Group Styles */
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 1em;
+            letter-spacing: 0.02em;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 14px 18px; /* Larger padding */
+            border: 1px solid var(--border-color);
+            border-radius: 10px; /* More rounded */
+            font-size: 1.05em; /* Slightly larger font */
+            color: var(--text-color);
+            background-color: var(--background-end-color);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            appearance: none;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+        }
+
+        select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23666' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 18px center;
+            background-size: 20px; /* Slightly larger arrow */
+            padding-right: 45px;
+        }
+
+        input[type="number"]:focus,
+        input[type="text"]:focus,
+        select:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 4px rgba(0, 196, 180, 0.25); /* Teal glow */
+            outline: none;
+        }
+
+        input[readonly] {
+            background-color: #F5F5F5;
+            cursor: default; /* Not-allowed if editable */
+            box-shadow: none; /* Remove inner shadow for readonly */
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 30px; /* Larger buttons */
+            border: none;
+            border-radius: 10px; /* More rounded */
+            cursor: pointer;
+            font-size: 1.05em;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 12px var(--shadow-light); /* More pronounced shadow */
+            letter-spacing: 0.03em;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px); /* More pronounced lift */
+            box-shadow: 0 8px 18px var(--shadow-medium);
+        }
+
+        .primary-btn {
+            background: linear-gradient(90deg, var(--secondary-color) 0%, #00A39C 100%); /* Teal gradient */
+            color: var(--light-text-color);
+        }
+
+        .primary-btn:hover {
+            background: linear-gradient(90deg, #00A39C 0%, #008780 100%);
+        }
+
+        .success-btn {
+            background: linear-gradient(90deg, #4CAF50 0%, #388E3C 100%); /* Green gradient */
+            color: var(--light-text-color);
+        }
+
+        .success-btn:hover {
+            background: linear-gradient(90deg, #388E3C 0%, #2E7D32 100%);
+        }
+
+        .danger-btn {
+            background: linear-gradient(90deg, #F44336 0%, #D32F2F 100%); /* Red gradient */
+            color: var(--light-text-color);
+        }
+
+        .danger-btn:hover {
+            background: linear-gradient(90deg, #D32F2F 0%, #C62828 100%);
+        }
+
+        /* Converter Grid Layout */
+        .converter-grid {
+            display: grid;
+            gap: 25px; /* More spacing */
+            grid-template-columns: 1fr;
+            margin-bottom: 25px;
+        }
+
+        @media (min-width: var(--breakpoint-tablet)) {
+            .converter-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: var(--breakpoint-desktop)) {
+            .converter-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .converter-section #convertBtn {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        @media (min-width: var(--breakpoint-tablet)) {
+            .converter-section #convertBtn {
+                width: auto;
+                display: block;
+                margin: 25px auto 0;
+            }
+        }
+
+
+        /* Custom Units List */
+        .unit-list ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 25px;
+        }
+
+        .unit-list li {
+            background-color: var(--background-start-color);
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1em;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for list items */
+        }
+
+        .unit-list li strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .unit-list li .remove-unit-btn {
+            background-color: #FF5722;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .unit-list li .remove-unit-btn:hover {
+            background-color: #E64A19;
+            transform: translateY(-1px);
+        }
+
+        .unit-list #clearCustomUnitsBtn {
+            margin-top: 25px;
+            width: 100%;
+        }
+
+        /* Advertisement Spots */
+        .ad-spot {
+            text-align: center;
+            margin: 40px 0; /* More margin */
+            padding: 30px; /* More padding */
+            background-color: var(--card-background);
+            border: 2px dashed var(--border-color); /* Thicker dashed border */
+            border-radius: 16px;
+            font-style: italic;
+            color: #666;
+            height: 280px; /* Slightly taller placeholder for larger ads */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Info Section */
+        .info-section p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+            font-size: 1.05em;
+        }
+
+        .info-section ul {
+            list-style: disc;
+            padding-left: 30px; /* More padding for lists */
+            margin-top: 20px;
+        }
+
+        .info-section li {
+            margin-bottom: 10px;
+            color: var(--text-color);
+            font-size: 1em;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color); /* Match header's base color */
+            color: #C0C8DA; /* Lighter text for footer */
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.95em;
+            box-shadow: 0 -4px 10px var(--shadow-light);
+        }
+
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Dynamic Unit Converter</h1>
+            <p class="tagline">Convert Anything. Define Your Own Units. Simply.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="converter-section card">
+            <h2>Unit Conversion</h2>
+            <div class="converter-grid">
+                <div class="input-group">
+                    <label for="inputValue">Value to Convert:</label>
+                    <input type="number" id="inputValue" value="1" step="any">
+                </div>
+                <div class="input-group">
+                    <label for="fromUnit">From Unit:</label>
+                    <select id="fromUnit"></select>
+                </div>
+                <div class="input-group">
+                    <label for="toUnit">To Unit:</label>
+                    <select id="toUnit"></select>
+                </div>
+                <div class="input-group result-group">
+                    <label for="outputValue">Result:</label>
+                    <input type="text" id="outputValue" readonly>
+                </div>
+            </div>
+            <button id="convertBtn" class="btn primary-btn">Convert Now</button>
+        </section>
+
+        <section class="ad-spot ad-top">
+            <p>Advertisement</p>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="pub-6066867577696178"
+                 data-ad-slot="5868471947"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            </section>
+
+        <section class="custom-units-section card">
+            <h2>Manage Custom Units</h2>
+            <div class="add-unit-form">
+                <h3>Add New Custom Unit</h3>
+                <div class="input-group">
+                    <label for="newUnitName">Unit Name (e.g., Furlong):</label>
+                    <input type="text" id="newUnitName" placeholder="e.g., Furlong">
+                </div>
+                <div class="input-group">
+                    <label for="baseUnit">Base Unit (e.g., Meter):</label>
+                    <select id="baseUnit"></select> </div>
+                <div class="input-group">
+                    <label for="conversionFactor">Conversion Factor (1 Base Unit = X New Unit):</label>
+                    <input type="number" id="conversionFactor" step="any" placeholder="e.g., 201.168 (1 meter = 201.168 furlongs)">
+                </div>
+                <button id="addUnitBtn" class="btn success-btn">Add Unit</button>
+            </div>
+
+            <div class="unit-list">
+                <h3>Your Custom Units</h3>
+                <ul id="customUnitsList">
+                    </ul>
+                <button id="clearCustomUnitsBtn" class="btn danger-btn">Clear All Custom Units</button>
+            </div>
+        </section>
+
+        <section class="ad-spot ad-bottom">
+            <p>Advertisement</p>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="pub-6066867577696178"
+                 data-ad-slot="5947528843"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            </section>
+
+        <section class="info-section card">
+            <h2>Unlock Your Measurement Potential</h2>
+            <p>Our **Premium Dynamic Unit Converter** is engineered for both precision and flexibility. Forget the limitations of standard converters; we empower you to **define and manage your own custom units**, making it indispensable for niche fields, historical research, scientific calculations, or even creative projects.</p>
+            <p>Designed with a **clean, intuitive interface** and robust, real-time conversion capabilities, our tool ensures accuracy and saves you valuable time. Add your unique units once, and they're seamlessly integrated and ready for instant use across all your conversions.</p>
+            <h3>Extensive Unit Categories Supported:</h3>
+            <ul>
+                <li>**Length:** Meters, Feet, Miles, Kilometers, Inches, and more.</li>
+                <li>**Mass:** Kilograms, Pounds, Grams, Ounces, Tonnes, and beyond.</li>
+                <li>**Volume:** Liters, Gallons, Cubic Meters, Fluid Ounces, and others.</li>
+                <li>**Temperature:** Celsius, Fahrenheit, Kelvin – with accurate conversions.</li>
+                <li>**Time:** Seconds, Minutes, Hours, Days, Weeks, Years.</li>
+                <li>... and **YOUR custom units** tailored to your exact needs!</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Site Name. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputValue = document.getElementById('inputValue');
+            const fromUnitSelect = document.getElementById('fromUnit');
+            const toUnitSelect = document.getElementById('toUnit');
+            const outputValue = document.getElementById('outputValue');
+            const convertBtn = document.getElementById('convertBtn');
+
+            const newUnitNameInput = document.getElementById('newUnitName');
+            const baseUnitSelect = document.getElementById('baseUnit');
+            const conversionFactorInput = document.getElementById('conversionFactor');
+            const addUnitBtn = document.getElementById('addUnitBtn');
+            const customUnitsList = document.getElementById('customUnitsList');
+            const clearCustomUnitsBtn = document.getElementById('clearCustomUnitsBtn');
+
+            // Base unit definitions (1 unit = X meters, 1 unit = X kg, etc.)
+            // We'll define a base category (e.g., 'Length', 'Mass') and a primary unit within that category
+            // All conversions within a category will go through the primary unit.
+            let units = {
+                'Length': {
+                    'Meter': 1,
+                    'Kilometer': 1000,
+                    'Centimeter': 0.01,
+                    'Millimeter': 0.001,
+                    'Micrometer': 0.000001,
+                    'Nanometer': 0.000000001,
+                    'Mile': 1609.34,
+                    'Yard': 0.9144,
+                    'Foot': 0.3048,
+                    'Inch': 0.0254,
+                    'Nautical Mile': 1852
+                },
+                'Mass': {
+                    'Kilogram': 1,
+                    'Gram': 0.001,
+                    'Milligram': 0.000001,
+                    'Pound': 0.453592,
+                    'Ounce': 0.0283495,
+                    'Tonne': 1000,
+                    'Metric Ton': 1000
+                },
+                'Volume': {
+                    'Liter': 1,
+                    'Milliliter': 0.001,
+                    'Cubic Meter': 1000,
+                    'Cubic Centimeter': 0.001,
+                    'Gallon (US)': 3.78541,
+                    'Quart (US)': 0.946353,
+                    'Pint (US)': 0.473176,
+                    'Fluid Ounce (US)': 0.0295735
+                },
+                'Temperature': { // Special handling for temperature
+                    'Celsius': { toBase: (c) => c + 273.15, fromBase: (k) => k - 273.15 }, // Base is Kelvin
+                    'Fahrenheit': { toBase: (f) => (f - 32) * 5/9 + 273.15, fromBase: (k) => (k - 273.15) * 9/5 + 32 },
+                    'Kelvin': { toBase: (k) => k, fromBase: (k) => k }
+                },
+                'Time': {
+                    'Second': 1,
+                    'Millisecond': 0.001,
+                    'Minute': 60,
+                    'Hour': 3600,
+                    'Day': 86400,
+                    'Week': 604800,
+                    'Year (approx)': 31536000
+                }
+                // Add more categories and units as needed
+            };
+
+            // Store custom units separately to distinguish them and allow removal
+            let customUnits = loadCustomUnits(); // Load from local storage
+
+            // Merge custom units into the main units object for conversion
+            function mergeUnits() {
+                for (const category in customUnits) {
+                    if (!units[category]) {
+                        units[category] = {};
+                    }
+                    Object.assign(units[category], customUnits[category]);
+                }
+            }
+
+            // Initialize unit dropdowns
+            function populateUnitSelects() {
+                fromUnitSelect.innerHTML = '';
+                toUnitSelect.innerHTML = '';
+                baseUnitSelect.innerHTML = ''; // For custom unit definition
+
+                // First, merge custom units so they are available for selection
+                mergeUnits();
+
+                // Sort categories alphabetically
+                const sortedCategories = Object.keys(units).sort();
+
+                sortedCategories.forEach(category => {
+                    const optgroupFrom = document.createElement('optgroup');
+                    optgroupFrom.label = category;
+                    const optgroupTo = document.createElement('optgroup');
+                    optgroupTo.label = category;
+                    const optgroupBase = document.createElement('optgroup'); // For base unit selection
+                    optgroupBase.label = category;
+
+                    // Sort units within each category alphabetically
+                    const sortedUnitNames = Object.keys(units[category]).sort();
+
+                    sortedUnitNames.forEach(unitName => {
+                        const optionFrom = document.createElement('option');
+                        optionFrom.value = `${category}:${unitName}`;
+                        optionFrom.textContent = unitName;
+                        optgroupFrom.appendChild(optionFrom);
+
+                        const optionTo = document.createElement('option');
+                        optionTo.value = `${category}:${unitName}`;
+                        optionTo.textContent = unitName;
+                        optgroupTo.appendChild(optionTo);
+
+                        // Only add units with a numerical conversion factor as base units
+                        // Temperature units need special handling and shouldn't be direct base units for new units
+                        if (typeof units[category][unitName] === 'number') {
+                            const optionBase = document.createElement('option');
+                            optionBase.value = `${category}:${unitName}`;
+                            optionBase.textContent = unitName;
+                            optgroupBase.appendChild(optionBase);
+                        }
+                    });
+
+                    fromUnitSelect.appendChild(optgroupFrom);
+                    toUnitSelect.appendChild(optgroupTo);
+                    if (optgroupBase.children.length > 0) { // Only add if there are valid base units
+                        baseUnitSelect.appendChild(optgroupBase);
+                    }
+                });
+
+                // Set default selections
+                fromUnitSelect.value = 'Length:Meter';
+                toUnitSelect.value = 'Length:Kilometer';
+            }
+
+            // Conversion Logic
+            function convertUnits() {
+                const value = parseFloat(inputValue.value);
+                if (isNaN(value)) {
+                    outputValue.value = 'Invalid Input';
+                    return;
+                }
+
+                const [fromCategory, fromUnit] = fromUnitSelect.value.split(':');
+                const [toCategory, toUnit] = toUnitSelect.value.split(':');
+
+                if (fromCategory !== toCategory) {
+                    outputValue.value = 'Cannot convert between different categories!';
+                    return;
+                }
+
+                const category = fromCategory;
+
+                if (category === 'Temperature') {
+                    const fromUnitObj = units[category][fromUnit];
+                    const toUnitObj = units[category][toUnit];
+
+                    // Convert input value to Kelvin (base temperature unit)
+                    const valueInKelvin = fromUnitObj.toBase(value);
+                    // Convert Kelvin to target unit
+                    const result = toUnitObj.fromBase(valueInKelvin);
+                    outputValue.value = result.toFixed(6); // ToFixed for better readability
+                    return;
+                }
+
+                const fromFactor = units[category][fromUnit];
+                const toFactor = units[category][toUnit];
+
+                if (fromFactor === undefined || toFactor === undefined) {
+                    outputValue.value = 'Units not found!';
+                    return;
+                }
+
+                // Convert to base unit, then to target unit
+                const valueInBase = value * fromFactor;
+                const result = valueInBase / toFactor;
+
+                outputValue.value = result.toFixed(6); // ToFixed for better readability
+            }
+
+            // Custom Unit Management
+            function saveCustomUnits() {
+                localStorage.setItem('customUnits', JSON.stringify(customUnits));
+            }
+
+            function loadCustomUnits() {
+                const storedUnits = localStorage.getItem('customUnits');
+                return storedUnits ? JSON.parse(storedUnits) : {};
+            }
+
+            function renderCustomUnits() {
+                customUnitsList.innerHTML = '';
+                let hasCustomUnits = false;
+                for (const category in customUnits) {
+                    for (const unitName in customUnits[category]) {
+                        hasCustomUnits = true;
+                        const li = document.createElement('li');
+                        // Display: "1 base unit (e.g., Meter) = X custom unit (e.g., Furlong)"
+                        // Find the "primary" unit for the category (factor 1)
+                        const baseUnitNameForDisplay = Object.keys(units[category]).find(key => units[category][key] === 1);
+
+                        li.innerHTML = `
+                            <strong>${unitName}</strong> (in ${category}): 1 ${baseUnitNameForDisplay} = ${(1 / customUnits[category][unitName]).toFixed(4)} ${unitName}
+                            <button class="remove-unit-btn" data-category="${category}" data-unit="${unitName}">Remove</button>
+                        `;
+                        customUnitsList.appendChild(li);
+                    }
+                }
+                clearCustomUnitsBtn.style.display = hasCustomUnits ? 'block' : 'none';
+            }
+
+            function addCustomUnit() {
+                const name = newUnitNameInput.value.trim();
+                const baseUnitValue = baseUnitSelect.value;
+                const factor = parseFloat(conversionFactorInput.value);
+
+                if (!name || !baseUnitValue || isNaN(factor) || factor <= 0) {
+                    alert('Please fill in all fields correctly for the custom unit. Conversion factor must be a positive number.');
+                    return;
+                }
+
+                const [baseCategory, baseUnitName] = baseUnitValue.split(':');
+
+                if (!units[baseCategory] || typeof units[baseCategory][baseUnitName] !== 'number') {
+                     alert('Selected base unit is invalid or a temperature unit, which cannot be used for direct factor conversion.');
+                     return;
+                }
+
+                // Add to customUnits object
+                if (!customUnits[baseCategory]) {
+                    customUnits[baseCategory] = {};
+                }
+                // Store conversion factor as (1 of custom unit = X of base unit)
+                // Our system defines unit factors as "1 of unit = X of CATEGORY's PRIMARY base unit (factor 1)".
+                // So, if 1 Meter = 201.168 Furlongs, then Furlong's factor is (1 / 201.168) relative to Meter (our primary base unit for Length).
+                customUnits[baseCategory][name] = 1 / factor;
+
+
+                saveCustomUnits();
+                populateUnitSelects(); // Re-populate dropdowns with new unit
+                renderCustomUnits();
+                alert(`Custom unit "${name}" added successfully to ${baseCategory}!`);
+
+                // Clear form
+                newUnitNameInput.value = '';
+                conversionFactorInput.value = '';
+            }
+
+            function removeCustomUnit(category, unitName) {
+                if (confirm(`Are you sure you want to remove "${unitName}"?`)) {
+                    delete customUnits[category][unitName];
+                    if (Object.keys(customUnits[category]).length === 0) {
+                        delete customUnits[category]; // Remove category if empty
+                    }
+                    saveCustomUnits();
+                    // Re-initialize units to remove the deleted custom unit from active use
+                    // This is necessary because units object was merged.
+                    units = {
+                        'Length': {
+                            'Meter': 1, 'Kilometer': 1000, 'Centimeter': 0.01, 'Millimeter': 0.001, 'Micrometer': 0.000001, 'Nanometer': 0.000000001, 'Mile': 1609.34, 'Yard': 0.9144, 'Foot': 0.3048, 'Inch': 0.0254, 'Nautical Mile': 1852
+                        },
+                        'Mass': {
+                            'Kilogram': 1, 'Gram': 0.001, 'Milligram': 0.000001, 'Pound': 0.453592, 'Ounce': 0.0283495, 'Tonne': 1000, 'Metric Ton': 1000
+                        },
+                        'Volume': {
+                            'Liter': 1, 'Milliliter': 0.001, 'Cubic Meter': 1000, 'Cubic Centimeter': 0.001, 'Gallon (US)': 3.78541, 'Quart (US)': 0.946353, 'Pint (US)': 0.473176, 'Fluid Ounce (US)': 0.0295735
+                        },
+                        'Temperature': {
+                            'Celsius': { toBase: (c) => c + 273.15, fromBase: (k) => k - 273.15 },
+                            'Fahrenheit': { toBase: (f) => (f - 32) * 5/9 + 273.15, fromBase: (k) => (k - 273.15) * 9/5 + 32 },
+                            'Kelvin': { toBase: (k) => k, fromBase: (k) => k }
+                        },
+                        'Time': {
+                            'Second': 1, 'Millisecond': 0.001, 'Minute': 60, 'Hour': 3600, 'Day': 86400, 'Week': 604800, 'Year (approx)': 31536000
+                        }
+                    };
+                    populateUnitSelects();
+                    renderCustomUnits();
+                }
+            }
+
+            function clearAllCustomUnits() {
+                if (confirm('Are you sure you want to clear ALL your custom units? This cannot be undone.')) {
+                    localStorage.removeItem('customUnits');
+                    customUnits = {};
+                    // Reset units to original state then merge
+                    units = {
+                        'Length': {
+                            'Meter': 1, 'Kilometer': 1000, 'Centimeter': 0.01, 'Millimeter': 0.001, 'Micrometer': 0.000001, 'Nanometer': 0.000000001, 'Mile': 1609.34, 'Yard': 0.9144, 'Foot': 0.3048, 'Inch': 0.0254, 'Nautical Mile': 1852
+                        },
+                        'Mass': {
+                            'Kilogram': 1, 'Gram': 0.001, 'Milligram': 0.000001, 'Pound': 0.453592, 'Ounce': 0.0283495, 'Tonne': 1000, 'Metric Ton': 1000
+                        },
+                        'Volume': {
+                            'Liter': 1, 'Milliliter': 0.001, 'Cubic Meter': 1000, 'Cubic Centimeter': 0.001, 'Gallon (US)': 3.78541, 'Quart (US)': 0.946353, 'Pint (US)': 0.473176, 'Fluid Ounce (US)': 0.0295735
+                        },
+                        'Temperature': {
+                            'Celsius': { toBase: (c) => c + 273.15, fromBase: (k) => k - 273.15 },
+                            'Fahrenheit': { toBase: (f) => (f - 32) * 5/9 + 273.15, fromBase: (k) => (k - 273.15) * 9/5 + 32 },
+                            'Kelvin': { toBase: (k) => k, fromBase: (k) => k }
+                        },
+                        'Time': {
+                            'Second': 1, 'Millisecond': 0.001, 'Minute': 60, 'Hour': 3600, 'Day': 86400, 'Week': 604800, 'Year (approx)': 31536000
+                        }
+                    };
+                    populateUnitSelects();
+                    renderCustomUnits();
+                }
+            }
+
+
+            // Event Listeners
+            convertBtn.addEventListener('click', convertUnits);
+            inputValue.addEventListener('input', convertUnits);
+            fromUnitSelect.addEventListener('change', convertUnits);
+            toUnitSelect.addEventListener('change', convertUnits);
+            addUnitBtn.addEventListener('click', addCustomUnit);
+            clearCustomUnitsBtn.addEventListener('click', clearAllCustomUnits);
+
+            customUnitsList.addEventListener('click', (event) => {
+                if (event.target.classList.contains('remove-unit-btn')) {
+                    const category = event.target.dataset.category;
+                    const unitName = event.target.dataset.unit;
+                    removeCustomUnit(category, unitName);
+                }
+            });
+
+            // Optional: Add a simple input validation for newUnitNameInput to prevent non-alphanumeric, etc.
+            newUnitNameInput.addEventListener('input', () => {
+                newUnitNameInput.value = newUnitNameInput.value.replace(/[^a-zA-Z0-9\s-]/g, ''); // Allow letters, numbers, spaces, hyphens
+            });
+
+            // Initial load
+            populateUnitSelects();
+            renderCustomUnits();
+            convertUnits(); // Perform initial conversion on page load
+        });
+    </script>
+</body>
+</html>
