@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unitopia Neo - Futuristic Unit Converter</title>
     <meta name="description" content="The next-generation unit conversion experience with holographic UI and AI-powered conversions">
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-XXXXXXXXXXXXXXXX",
-            enable_page_level_ads: true
-        });
-    </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔮</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -58,74 +50,1111 @@
             overflow-x: hidden;
         }
 
-        /* AdSense Container Styles */
-        .ad-container {
-            margin: 20px auto;
-            text-align: center;
-            background: var(--glass-light);
-            border-radius: var(--radius-md);
-            padding: 15px;
-            border: 1px solid rgba(0, 240, 255, 0.1);
-            box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+        html {
+            scroll-behavior: smooth;
         }
 
-        .ad-container.header-ad {
-            margin-top: 80px;
-            max-width: 728px;
-            min-height: 90px;
+        /* Cyberpunk Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
         }
 
-        .ad-container.sidebar-ad {
-            position: sticky;
-            top: 100px;
-            max-width: 300px;
-            min-height: 250px;
-            float: right;
-            margin-left: 30px;
-            margin-bottom: 30px;
+        ::-webkit-scrollbar-track {
+            background: var(--primary-dark);
         }
 
-        .ad-container.footer-ad {
-            max-width: 728px;
-            min-height: 90px;
-            margin-bottom: 40px;
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-blue);
+            border-radius: 4px;
         }
 
-        .ad-container.in-content-ad {
-            max-width: 728px;
-            min-height: 90px;
-            margin: 60px auto;
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-pink);
         }
 
-        .ad-label {
+        /* Container & Layout */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            width: 100%;
+        }
+
+        /* Futuristic Header */
+        .header-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 0;
+            z-index: 1000;
+            background-color: var(--glass-dark);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
             font-family: var(--font-heading);
-            font-size: 0.8rem;
-            color: var(--neon-blue);
-            margin-bottom: 10px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
+        .logo span {
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+        }
+
+        .logo span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--transition-speed) var(--transition-ease);
+        }
+
+        .logo:hover span::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            color: var(--neon-blue);
+            filter: drop-shadow(var(--glow-blue));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            padding: 5px 0;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            transition: width var(--transition-speed) var(--transition-ease);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-light);
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--neon-blue);
+            font-size: 1.5rem;
+            cursor: pointer;
+            filter: drop-shadow(var(--glow-blue));
+        }
+
+        /* Holographic Hero Section */
+        .hero-section {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 228, 0.1) 0%, transparent 30%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, var(--text-light), var(--neon-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            color: var(--text-dim);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 18px 40px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all var(--transition-speed) var(--transition-ease);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button.primary {
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            color: var(--primary-dark);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        .cta-button.primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+            opacity: 0;
+            transition: opacity var(--transition-speed) ease;
+            z-index: -1;
+        }
+
+        .cta-button.primary:hover::before {
+            opacity: 1;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--neon-blue);
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        /* Holographic Grid Background */
+        .grid-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Main Content Sections */
+        main {
+            position: relative;
+            padding: 100px 0;
+        }
+
+        .section {
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .section h2 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            border-radius: 3px;
+        }
+
+        /* Glass Morphic Card */
+        .glass-card {
+            background: var(--glass-light);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            box-shadow: 
+                0 0 20px rgba(0, 0, 0, 0.3),
+                inset 0 0 10px rgba(0, 240, 255, 0.1);
+            padding: 40px;
+            transition: all var(--transition-speed) var(--transition-ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(0, 240, 255, 0) 0%,
+                rgba(0, 240, 255, 0.1) 50%,
+                rgba(0, 240, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            z-index: -1;
+            animation: shine 6s infinite linear;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(30deg) translate(-30%, -30%); }
+            100% { transform: rotate(30deg) translate(30%, 30%); }
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.5),
+                inset 0 0 20px rgba(0, 240, 255, 0.2);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            composes: glass-card;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.5));
+        }
+
+        .feature-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            color: var(--neon-blue);
+        }
+
+        .feature-item p {
+            color: var(--text-dim);
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            composes: glass-card;
+            background: linear-gradient(135deg, rgba(26, 42, 74, 0.7), rgba(10, 14, 23, 0.9));
+            padding: 60px;
+            margin-bottom: 80px;
+        }
+
+        .testimonials-section h2 {
+            color: var(--text-light);
+        }
+
+        .testimonial-carousel {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+
+        .testimonial-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .testimonial-item {
+            flex: 0 0 400px;
+            scroll-snap-align: start;
+            background: rgba(0, 240, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-dim);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .testimonial-item p::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 2rem;
+            color: var(--neon-blue);
+            opacity: 0.5;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--neon-pink);
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+        }
+
+        /* Futuristic Converter */
+        .converter-container {
+            composes: glass-card;
+            padding: 50px;
+        }
+
+        .category-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scrollbar-width: none;
+        }
+
+        .category-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-tab {
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--text-dim);
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            white-space: nowrap;
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            text-transform: uppercase;
+        }
+
+        .category-tab.active {
+            background: rgba(0, 240, 255, 0.2);
+            color: var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+            box-shadow: var(--glow-blue);
+        }
+
+        .category-tab:hover {
+            background: rgba(0, 240, 255, 0.15);
+        }
+
+        .converter-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: flex-end;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-group label {
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+        }
+
+        .form-input {
+            padding: 16px 20px;
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            color: var(--text-light);
+            transition: all var(--transition-speed) ease;
+            font-family: var(--font-body);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: var(--glow-blue);
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-dim);
+            opacity: 0.5;
+        }
+
+        .form-select {
+            padding: 16px 20px;
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            color: var(--text-light);
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300F0FF' stroke='%2300F0FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+            transition: all var(--transition-speed) ease;
+            font-family: var(--font-body);
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: var(--glow-blue);
+            background-color: rgba(0, 240, 255, 0.1);
+        }
+
+        .converter-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            grid-column: 1 / -1;
+        }
+
+        .action-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 24px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--neon-blue);
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .action-button:hover {
+            background: rgba(0, 240, 255, 0.2);
+            border-color: var(--neon-blue);
+            box-shadow: var(--glow-blue);
+            transform: translateY(-2px);
+        }
+
+        .action-button i {
+            font-size: 0.9rem;
+        }
+
+        /* Custom Unit Section */
+        .custom-unit-section {
+            composes: glass-card;
+            background: rgba(138, 43, 226, 0.05);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            margin-top: 40px;
+            padding: 30px;
+        }
+
+        .custom-unit-section h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--neon-purple);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .custom-unit-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .custom-unit-form button {
+            grid-column: 1 / -1;
+            background: linear-gradient(90deg, var(--neon-purple), #BA55D3));
+            color: var(--primary-dark);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+        }
+
+        .custom-unit-form button:hover {
+            background: linear-gradient(90deg, #BA55D3, var(--neon-purple));
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
+        }
+
+        /* Saved Units Section */
+        .saved-units-section {
+            margin-top: 40px;
+        }
+
+        .saved-units-section h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .units-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .unit-item {
+            composes: glass-card;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+        }
+
+        .unit-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .unit-info strong {
+            color: var(--neon-blue);
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+        }
+
+        .unit-info span {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .delete-unit {
+            background: none;
+            border: none;
+            color: #FF6B6B;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .delete-unit:hover {
+            color: #FF0000;
+            transform: scale(1.1);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(0, 240, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(255, 0, 228, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            color: var(--text-dim);
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Cyberpunk Footer */
+        footer {
+            background: linear-gradient(to top, var(--primary-dark), var(--bg-darker));
+            padding: 60px 0 30px;
+            position: relative;
+            border-top: 1px solid rgba(0, 240, 255, 0.1);
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: all var(--transition-speed) ease;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .footer-links a::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--neon-blue);
+            opacity: 0;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-light);
+            padding-left: 20px;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+            left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--neon-blue);
+            font-size: 1.2rem;
+            transition: all var(--transition-speed) ease;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .social-icons a:hover {
+            background: rgba(0, 240, 255, 0.2);
+            color: var(--text-light);
+            transform: translateY(-3px);
+            box-shadow: var(--glow-blue);
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 240, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 4rem;
+            }
+        }
+
         @media (max-width: 992px) {
-            .ad-container.sidebar-ad {
-                float: none;
-                margin: 30px auto;
-                position: static;
-                max-width: 300px;
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .converter-form {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
-            .ad-container.header-ad,
-            .ad-container.footer-ad,
-            .ad-container.in-content-ad {
-                max-width: 100%;
-                min-height: 50px;
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--primary-dark);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                gap: 15px;
+                border-bottom: 1px solid var(--neon-blue);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-section {
+                min-height: 700px;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cta-section h2 {
+                font-size: 2.5rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
-        /* Rest of your existing CSS remains unchanged */
-        /* ... [all your existing CSS styles] ... */
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .feature-item {
+                padding: 20px;
+            }
+
+            .testimonial-item {
+                flex: 0 0 90%;
+            }
+
+            .converter-container {
+                padding: 30px;
+            }
+
+            .custom-unit-form {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating.delay-1 { animation-delay: 1s; }
+        .floating.delay-2 { animation-delay: 2s; }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        .pulse {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s var(--transition-ease) forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* Particle Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--neon-blue);
+            border-radius: 50%;
+            filter: blur(1px);
+            opacity: 0.5;
+        }
+
+        /* Holographic Effect */
+        .holographic {
+            position: relative;
+        }
+
+        .holographic::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(0, 240, 255, 0.1) 0%,
+                rgba(255, 0, 228, 0.1) 50%,
+                rgba(0, 240, 255, 0.1) 100%
+            );
+            z-index: -1;
+            opacity: 0;
+            transition: opacity var(--transition-speed) ease;
+        }
+
+        .holographic:hover::after {
+            opacity: 1;
+        }
+
+        /* Cyberpunk Scanlines */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(
+                    to bottom,
+                    rgba(0, 240, 255, 0.03) 1px,
+                    transparent 1px
+                );
+            background-size: 100% 3px;
+            pointer-events: none;
+            z-index: 9999;
+            animation: scanline 10s linear infinite;
+        }
+
+        @keyframes scanline {
+            from { transform: translateY(0); }
+            to { transform: translateY(100vh); }
+        }
+
+        /* CRT Effect */
+        .crt::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 240, 255, 0.02);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .crt::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: 
+                linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 240, 255, 0.1) 3px,
+                    rgba(0, 0, 0, 0) 6px
+                );
+            z-index: 2;
+            pointer-events: none;
+            animation: flicker 0.15s infinite;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.1; }
+            20% { opacity: 0.3; }
+            40% { opacity: 0.1; }
+            60% { opacity: 0.5; }
+            80% { opacity: 0.3; }
+            100% { opacity: 0.1; }
+        }
     </style>
 </head>
 <body class="crt">
@@ -156,23 +1185,6 @@
             </button>
         </div>
     </header>
-
-    <!-- Header Ad Unit -->
-    <div class="container">
-        <div class="ad-container header-ad">
-            <div class="ad-label">Sponsored Content</div>
-            <!-- AdSense Header Ad -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                 data-ad-slot="XXXXXXXXXX"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </div>
 
     <section class="hero-section">
         <div class="grid-bg"></div>
@@ -229,23 +1241,6 @@
             </div>
         </section>
 
-        <!-- In-Content Ad Unit -->
-        <div class="container">
-            <div class="ad-container in-content-ad">
-                <div class="ad-label">Advertisement</div>
-                <!-- AdSense In-Content Ad -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                     data-ad-slot="XXXXXXXXXX"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-        </div>
-
         <section id="testimonials" class="testimonials-section">
             <div class="container">
                 <h2 class="fade-in">USER EXPERIENCES</h2>
@@ -267,120 +1262,86 @@
         </section>
 
         <section id="converter" class="section container">
-            <div class="converter-wrapper" style="position: relative;">
-                <!-- Sidebar Ad Unit -->
-                <div class="ad-container sidebar-ad">
-                    <div class="ad-label">Sponsored Links</div>
-                    <!-- AdSense Sidebar Ad -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                         data-ad-slot="XXXXXXXXXX"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+            <h2 class="fade-in">HOLOGRAPHIC CONVERTER</h2>
+            <div class="converter-container holographic">
+                <div class="category-tabs" id="category-tabs">
+                    <!-- Categories will be populated by JavaScript -->
                 </div>
-
-                <h2 class="fade-in">HOLOGRAPHIC CONVERTER</h2>
-                <div class="converter-container holographic">
-                    <div class="category-tabs" id="category-tabs">
-                        <!-- Categories will be populated by JavaScript -->
+                
+                <div class="converter-form">
+                    <div class="input-group fade-in">
+                        <label for="input-value">INPUT VALUE</label>
+                        <input type="number" id="input-value" placeholder="Enter value" class="form-input">
                     </div>
-                    
-                    <div class="converter-form">
-                        <div class="input-group fade-in">
-                            <label for="input-value">INPUT VALUE</label>
-                            <input type="number" id="input-value" placeholder="Enter value" class="form-input">
+                    <div class="input-group fade-in delay-1">
+                        <label for="input-unit">SOURCE UNIT</label>
+                        <select id="input-unit" class="form-select">
+                            <option value="">Select unit</option>
+                            <!-- Units will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    <div class="input-group fade-in">
+                        <label for="output-value">RESULT</label>
+                        <input type="number" id="output-value" placeholder="Result" class="form-input" readonly>
+                    </div>
+                    <div class="input-group fade-in delay-1">
+                        <label for="output-unit">TARGET UNIT</label>
+                        <select id="output-unit" class="form-select">
+                            <option value="">Select unit</option>
+                            <!-- Units will be populated by JavaScript -->
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="converter-actions">
+                    <button id="swap-units" class="action-button fade-in">
+                        <i class="fas fa-exchange-alt"></i> SWAP
+                    </button>
+                    <button id="reset-converter" class="action-button fade-in delay-1">
+                        <i class="fas fa-redo"></i> RESET
+                    </button>
+                    <button id="copy-result" class="action-button fade-in delay-2">
+                        <i class="fas fa-copy"></i> COPY
+                    </button>
+                </div>
+                
+                <div class="custom-unit-section fade-in">
+                    <h3><i class="fas fa-plus-circle"></i> CREATE CUSTOM UNIT</h3>
+                    <div class="custom-unit-form">
+                        <div class="input-group">
+                            <label for="custom-unit-name">UNIT NAME</label>
+                            <input type="text" id="custom-unit-name" placeholder="e.g., Warp Factor" class="form-input">
                         </div>
-                        <div class="input-group fade-in delay-1">
-                            <label for="input-unit">SOURCE UNIT</label>
-                            <select id="input-unit" class="form-select">
-                                <option value="">Select unit</option>
-                                <!-- Units will be populated by JavaScript -->
+                        <div class="input-group">
+                            <label for="custom-unit-symbol">UNIT SYMBOL</label>
+                            <input type="text" id="custom-unit-symbol" placeholder="e.g., WF" class="form-input">
+                        </div>
+                        <div class="input-group">
+                            <label for="base-unit">BASE UNIT</label>
+                            <select id="base-unit" class="form-select">
+                                <option value="">Select base unit</option>
+                                <!-- Base units will be populated by JavaScript -->
                             </select>
                         </div>
-                        <div class="input-group fade-in">
-                            <label for="output-value">RESULT</label>
-                            <input type="number" id="output-value" placeholder="Result" class="form-input" readonly>
+                        <div class="input-group">
+                            <label for="conversion-factor">CONVERSION FACTOR</label>
+                            <input type="number" id="conversion-factor" placeholder="e.g., 299792458" class="form-input">
+                            <small>1 [Your Unit] = X [Base Units]</small>
                         </div>
-                        <div class="input-group fade-in delay-1">
-                            <label for="output-unit">TARGET UNIT</label>
-                            <select id="output-unit" class="form-select">
-                                <option value="">Select unit</option>
-                                <!-- Units will be populated by JavaScript -->
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="converter-actions">
-                        <button id="swap-units" class="action-button fade-in">
-                            <i class="fas fa-exchange-alt"></i> SWAP
-                        </button>
-                        <button id="reset-converter" class="action-button fade-in delay-1">
-                            <i class="fas fa-redo"></i> RESET
-                        </button>
-                        <button id="copy-result" class="action-button fade-in delay-2">
-                            <i class="fas fa-copy"></i> COPY
+                        <button id="add-custom-unit" class="cta-button primary">
+                            <i class="fas fa-atom"></i> QUANTIZE UNIT
                         </button>
                     </div>
-                    
-                    <div class="custom-unit-section fade-in">
-                        <h3><i class="fas fa-plus-circle"></i> CREATE CUSTOM UNIT</h3>
-                        <div class="custom-unit-form">
-                            <div class="input-group">
-                                <label for="custom-unit-name">UNIT NAME</label>
-                                <input type="text" id="custom-unit-name" placeholder="e.g., Warp Factor" class="form-input">
-                            </div>
-                            <div class="input-group">
-                                <label for="custom-unit-symbol">UNIT SYMBOL</label>
-                                <input type="text" id="custom-unit-symbol" placeholder="e.g., WF" class="form-input">
-                            </div>
-                            <div class="input-group">
-                                <label for="base-unit">BASE UNIT</label>
-                                <select id="base-unit" class="form-select">
-                                    <option value="">Select base unit</option>
-                                    <!-- Base units will be populated by JavaScript -->
-                                </select>
-                            </div>
-                            <div class="input-group">
-                                <label for="conversion-factor">CONVERSION FACTOR</label>
-                                <input type="number" id="conversion-factor" placeholder="e.g., 299792458" class="form-input">
-                                <small>1 [Your Unit] = X [Base Units]</small>
-                            </div>
-                            <button id="add-custom-unit" class="cta-button primary">
-                                <i class="fas fa-atom"></i> QUANTIZE UNIT
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="saved-units-section fade-in delay-1">
-                        <h3><i class="fas fa-database"></i> YOUR QUANTUM UNITS</h3>
-                        <div id="custom-units-list" class="units-list">
-                            <!-- Custom units will be displayed here -->
-                        </div>
+                </div>
+                
+                <div class="saved-units-section fade-in delay-1">
+                    <h3><i class="fas fa-database"></i> YOUR QUANTUM UNITS</h3>
+                    <div id="custom-units-list" class="units-list">
+                        <!-- Custom units will be displayed here -->
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Footer Ad Unit -->
-        <div class="container">
-            <div class="ad-container footer-ad">
-                <div class="ad-label">Advertisement</div>
-                <!-- AdSense Footer Ad -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                     data-ad-slot="XXXXXXXXXX"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-        </div>
 
         <section id="contact" class="cta-section">
             <div class="container">
@@ -445,9 +1406,619 @@
         </div>
     </footer>
 
-    <!-- Your existing JavaScript remains unchanged -->
     <script>
-        // [Your existing JavaScript code remains exactly the same]
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create floating particles
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 3 + 1;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                const opacity = Math.random() * 0.5 + 0.1;
+                
+                // Apply styles
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.opacity = opacity;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+                
+                // Randomly choose between blue and pink
+                if (Math.random() > 0.5) {
+                    particle.style.background = 'var(--neon-blue)';
+                    particle.style.boxShadow = '0 0 10px var(--neon-blue)';
+                } else {
+                    particle.style.background = 'var(--neon-pink)';
+                    particle.style.boxShadow = '0 0 10px var(--neon-pink)';
+                }
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+            
+            // Theme toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('light-mode');
+                const icon = themeToggle.querySelector('i');
+                if (document.body.classList.contains('light-mode')) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    localStorage.setItem('unitopia-theme', 'light');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    localStorage.setItem('unitopia-theme', 'dark');
+                }
+            });
+            
+            // Check for saved theme preference
+            if (localStorage.getItem('unitopia-theme') === 'light') {
+                document.body.classList.add('light-mode');
+                const icon = themeToggle.querySelector('i');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+            
+            // Unit Converter Functionality
+            const unitCategories = {
+                length: {
+                    name: 'Length',
+                    units: [
+                        { name: 'Meter', symbol: 'm', factor: 1 },
+                        { name: 'Kilometer', symbol: 'km', factor: 1000 },
+                        { name: 'Centimeter', symbol: 'cm', factor: 0.01 },
+                        { name: 'Millimeter', symbol: 'mm', factor: 0.001 },
+                        { name: 'Micrometer', symbol: 'µm', factor: 0.000001 },
+                        { name: 'Nanometer', symbol: 'nm', factor: 0.000000001 },
+                        { name: 'Mile', symbol: 'mi', factor: 1609.34 },
+                        { name: 'Yard', symbol: 'yd', factor: 0.9144 },
+                        { name: 'Foot', symbol: 'ft', factor: 0.3048 },
+                        { name: 'Inch', symbol: 'in', factor: 0.0254 },
+                        { name: 'Light Year', symbol: 'ly', factor: 9.461e+15 },
+                        { name: 'Astronomical Unit', symbol: 'AU', factor: 1.496e+11 },
+                        { name: 'Parsec', symbol: 'pc', factor: 3.086e+16 }
+                    ]
+                },
+                weight: {
+                    name: 'Mass',
+                    units: [
+                        { name: 'Gram', symbol: 'g', factor: 1 },
+                        { name: 'Kilogram', symbol: 'kg', factor: 1000 },
+                        { name: 'Milligram', symbol: 'mg', factor: 0.001 },
+                        { name: 'Metric Ton', symbol: 't', factor: 1000000 },
+                        { name: 'Pound', symbol: 'lb', factor: 453.592 },
+                        { name: 'Ounce', symbol: 'oz', factor: 28.3495 },
+                        { name: 'Stone', symbol: 'st', factor: 6350.29 },
+                        { name: 'Carat', symbol: 'ct', factor: 0.2 },
+                        { name: 'Solar Mass', symbol: 'M☉', factor: 1.989e+33 }
+                    ]
+                },
+                temperature: {
+                    name: 'Temperature',
+                    units: [
+                        { name: 'Celsius', symbol: '°C', factor: 1, offset: 0, isTemperature: true },
+                        { name: 'Fahrenheit', symbol: '°F', factor: 5/9, offset: -32, isTemperature: true },
+                        { name: 'Kelvin', symbol: 'K', factor: 1, offset: -273.15, isTemperature: true }
+                    ]
+                },
+                time: {
+                    name: 'Time',
+                    units: [
+                        { name: 'Second', symbol: 's', factor: 1 },
+                        { name: 'Millisecond', symbol: 'ms', factor: 0.001 },
+                        { name: 'Microsecond', symbol: 'µs', factor: 0.000001 },
+                        { name: 'Nanosecond', symbol: 'ns', factor: 1e-9 },
+                        { name: 'Minute', symbol: 'min', factor: 60 },
+                        { name: 'Hour', symbol: 'h', factor: 3600 },
+                        { name: 'Day', symbol: 'd', factor: 86400 },
+                        { name: 'Week', symbol: 'wk', factor: 604800 },
+                        { name: 'Year', symbol: 'yr', factor: 3.154e+7 },
+                        { name: 'Planck Time', symbol: 'tₚ', factor: 5.391e-44 }
+                    ]
+                },
+                energy: {
+                    name: 'Energy',
+                    units: [
+                        { name: 'Joule', symbol: 'J', factor: 1 },
+                        { name: 'Kilojoule', symbol: 'kJ', factor: 1000 },
+                        { name: 'Calorie', symbol: 'cal', factor: 4.184 },
+                        { name: 'Kilocalorie', symbol: 'kcal', factor: 4184 },
+                        { name: 'Watt-hour', symbol: 'Wh', factor: 3600 },
+                        { name: 'Kilowatt-hour', symbol: 'kWh', factor: 3600000 },
+                        { name: 'Electronvolt', symbol: 'eV', factor: 1.602e-19 },
+                        { name: 'British Thermal Unit', symbol: 'BTU', factor: 1055.06 },
+                        { name: 'Erg', symbol: 'erg', factor: 1e-7 },
+                        { name: 'Foot-pound', symbol: 'ft·lb', factor: 1.356 }
+                    ]
+                },
+                futuristic: {
+                    name: 'Futuristic',
+                    units: [
+                        { name: 'Warp Factor (TOS)', symbol: 'WF', factor: (Math.pow(3, 3) * 299792458 },
+                        { name: 'Warp Factor (TNG)', symbol: 'WF', factor: (Math.pow(10, 10/3) * 299792458 },
+                        { name: 'Credits (Star Wars)', symbol: 'CR', factor: 1 },
+                        { name: 'Quatloos', symbol: 'Q', factor: 1 },
+                        { name: 'Dilithium Crystal', symbol: 'DC', factor: 1e12 },
+                        { name: 'Holodeck Hour', symbol: 'HH', factor: 3600 },
+                        { name: 'Replicator Watt', symbol: 'RW', factor: 1e6 }
+                    ]
+                }
+            };
+            
+            // Current category
+            let currentCategory = 'length';
+            
+            // Populate category tabs
+            const categoryTabs = document.getElementById('category-tabs');
+            for (const category in unitCategories) {
+                const tab = document.createElement('div');
+                tab.className = 'category-tab';
+                if (category === currentCategory) tab.classList.add('active');
+                tab.textContent = unitCategories[category].name;
+                tab.dataset.category = category;
+                tab.addEventListener('click', function() {
+                    currentCategory = this.dataset.category;
+                    document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    populateUnitSelectors();
+                });
+                categoryTabs.appendChild(tab);
+            }
+            
+            // Populate unit selectors
+            const inputUnit = document.getElementById('input-unit');
+            const outputUnit = document.getElementById('output-unit');
+            const baseUnit = document.getElementById('base-unit');
+            
+            function populateUnitSelectors() {
+                // Clear existing options
+                inputUnit.innerHTML = '<option value="">Select unit</option>';
+                outputUnit.innerHTML = '<option value="">Select unit</option>';
+                baseUnit.innerHTML = '<option value="">Select base unit</option>';
+                
+                // Add units from current category
+                unitCategories[currentCategory].units.forEach(unit => {
+                    const inputOption = document.createElement('option');
+                    inputOption.value = JSON.stringify(unit);
+                    inputOption.textContent = `${unit.name} (${unit.symbol})`;
+                    inputUnit.appendChild(inputOption);
+                    
+                    const outputOption = document.createElement('option');
+                    outputOption.value = JSON.stringify(unit);
+                    outputOption.textContent = `${unit.name} (${unit.symbol})`;
+                    outputUnit.appendChild(outputOption);
+                    
+                    // Add to base unit selector (for custom units)
+                    const baseOption = document.createElement('option');
+                    baseOption.value = JSON.stringify(unit);
+                    baseOption.textContent = `${unit.name} (${unit.symbol})`;
+                    baseUnit.appendChild(baseOption);
+                });
+                
+                // Load custom units from localStorage
+                loadCustomUnits();
+            }
+            
+            // Load custom units from localStorage
+            function loadCustomUnits() {
+                const customUnits = JSON.parse(localStorage.getItem('unitopia_custom_units')) || [];
+                
+                if (customUnits.length > 0) {
+                    const customOptgroupInput = document.createElement('optgroup');
+                    customOptgroupInput.label = 'Custom Units';
+                    inputUnit.appendChild(customOptgroupInput);
+                    
+                    const customOptgroupOutput = document.createElement('optgroup');
+                    customOptgroupOutput.label = 'Custom Units';
+                    outputUnit.appendChild(customOptgroupOutput);
+                    
+                    customUnits.forEach(unit => {
+                        const inputOption = document.createElement('option');
+                        inputOption.value = JSON.stringify(unit);
+                        inputOption.textContent = `${unit.name} (${unit.symbol})`;
+                        customOptgroupInput.appendChild(inputOption);
+                        
+                        const outputOption = document.createElement('option');
+                        outputOption.value = JSON.stringify(unit);
+                        outputOption.textContent = `${unit.name} (${unit.symbol})`;
+                        customOptgroupOutput.appendChild(outputOption);
+                    });
+                    
+                    // Update custom units list display
+                    updateCustomUnitsList(customUnits);
+                }
+            }
+            
+            // Update custom units list display
+            function updateCustomUnitsList(customUnits) {
+                const unitsList = document.getElementById('custom-units-list');
+                unitsList.innerHTML = '';
+                
+                if (customUnits.length === 0) {
+                    unitsList.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; opacity: 0.7;">No custom units created yet</p>';
+                    return;
+                }
+                
+                customUnits.forEach((unit, index) => {
+                    const unitItem = document.createElement('div');
+                    unitItem.className = 'unit-item';
+                    unitItem.innerHTML = `
+                        <div class="unit-info">
+                            <strong>${unit.name} (${unit.symbol})</strong>
+                            <span>1 ${unit.symbol} = ${unit.factor} ${JSON.parse(unit.baseUnit).symbol}</span>
+                        </div>
+                        <button class="delete-unit" data-index="${index}" aria-label="Delete unit">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    `;
+                    unitsList.appendChild(unitItem);
+                });
+                
+                // Add event listeners to delete buttons
+                document.querySelectorAll('.delete-unit').forEach(button => {
+                    button.addEventListener('click', function() {
+                        deleteCustomUnit(parseInt(this.dataset.index));
+                    });
+                });
+            }
+            
+            // Delete custom unit
+            function deleteCustomUnit(index) {
+                let customUnits = JSON.parse(localStorage.getItem('unitopia_custom_units')) || [];
+                const deletedUnit = customUnits[index];
+                customUnits.splice(index, 1);
+                localStorage.setItem('unitopia_custom_units', JSON.stringify(customUnits));
+                
+                // Show undo notification
+                const notification = document.createElement('div');
+                notification.className = 'notification';
+                notification.innerHTML = `
+                    <span>Unit "${deletedUnit.name}" deleted</span>
+                    <button id="undo-delete">UNDO</button>
+                `;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('show');
+                }, 10);
+                
+                // Undo functionality
+                document.getElementById('undo-delete').addEventListener('click', function() {
+                    customUnits.splice(index, 0, deletedUnit);
+                    localStorage.setItem('unitopia_custom_units', JSON.stringify(customUnits));
+                    populateUnitSelectors();
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                });
+                
+                // Auto-remove notification
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 5000);
+                
+                populateUnitSelectors();
+            }
+            
+            // Conversion function
+            function convertUnits() {
+                const inputValue = parseFloat(document.getElementById('input-value').value);
+                const inputUnitValue = document.getElementById('input-unit').value;
+                const outputUnitValue = document.getElementById('output-unit').value;
+                
+                if (isNaN(inputValue) || !inputUnitValue || !outputUnitValue) {
+                    return;
+                }
+                
+                const inputUnit = JSON.parse(inputUnitValue);
+                const outputUnit = JSON.parse(outputUnitValue);
+                
+                let result;
+                
+                // Special handling for temperature
+                if (inputUnit.isTemperature || outputUnit.isTemperature) {
+                    result = convertTemperature(inputValue, inputUnit, outputUnit);
+                } else {
+                    // Standard conversion
+                    const baseValue = inputValue * inputUnit.factor;
+                    result = baseValue / outputUnit.factor;
+                }
+                
+                // Format the result nicely
+                const formattedResult = formatNumber(result);
+                document.getElementById('output-value').value = formattedResult;
+                
+                // Add glow effect to output
+                const outputField = document.getElementById('output-value');
+                outputField.style.boxShadow = '0 0 15px rgba(0, 240, 255, 0.7)';
+                setTimeout(() => {
+                    outputField.style.boxShadow = 'none';
+                }, 500);
+            }
+            
+            // Format number with appropriate decimal places
+            function formatNumber(num) {
+                if (num === 0) return '0';
+                
+                const absNum = Math.abs(num);
+                if (absNum >= 1e6 || absNum <= 1e-6) {
+                    return num.toExponential(4).replace('e+', '×10^').replace('e-', '×10^-');
+                } else if (absNum >= 1000) {
+                    return num.toLocaleString(undefined, { maximumFractionDigits: 2 });
+                } else if (absNum >= 1) {
+                    return num.toLocaleString(undefined, { maximumFractionDigits: 4 });
+                } else {
+                    return num.toLocaleString(undefined, { maximumFractionDigits: 6 });
+                }
+            }
+            
+            // Temperature conversion
+            function convertTemperature(value, fromUnit, toUnit) {
+                // Convert to Celsius first
+                let celsius;
+                
+                if (fromUnit.name === 'Celsius') {
+                    celsius = value;
+                } else if (fromUnit.name === 'Fahrenheit') {
+                    celsius = (value - 32) * 5/9;
+                } else if (fromUnit.name === 'Kelvin') {
+                    celsius = value - 273.15;
+                }
+                
+                // Convert from Celsius to target unit
+                if (toUnit.name === 'Celsius') {
+                    return celsius;
+                } else if (toUnit.name === 'Fahrenheit') {
+                    return celsius * 9/5 + 32;
+                } else if (toUnit.name === 'Kelvin') {
+                    return celsius + 273.15;
+                }
+                
+                return value;
+            }
+            
+            // Swap units
+            document.getElementById('swap-units').addEventListener('click', function() {
+                const inputUnit = document.getElementById('input-unit');
+                const outputUnit = document.getElementById('output-unit');
+                const inputValue = document.getElementById('input-value');
+                const outputValue = document.getElementById('output-value');
+                
+                const tempUnit = inputUnit.value;
+                inputUnit.value = outputUnit.value;
+                outputUnit.value = tempUnit;
+                
+                if (outputValue.value) {
+                    inputValue.value = outputValue.value;
+                    convertUnits();
+                }
+                
+                // Add animation effect
+                this.style.transform = 'rotate(180deg)';
+                setTimeout(() => {
+                    this.style.transform = 'rotate(0deg)';
+                }, 300);
+            });
+            
+            // Reset converter
+            document.getElementById('reset-converter').addEventListener('click', function() {
+                document.getElementById('input-value').value = '';
+                document.getElementById('output-value').value = '';
+                document.getElementById('input-unit').selectedIndex = 0;
+                document.getElementById('output-unit').selectedIndex = 0;
+                
+                // Add animation effect
+                this.innerHTML = '<i class="fas fa-check"></i> RESET';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-redo"></i> RESET';
+                }, 1000);
+            });
+            
+            // Copy result
+            document.getElementById('copy-result').addEventListener('click', function() {
+                const outputValue = document.getElementById('output-value');
+                if (outputValue.value) {
+                    outputValue.select();
+                    document.execCommand('copy');
+                    
+                    // Show feedback
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i> COPIED!';
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                    }, 2000);
+                }
+            });
+            
+            // Add custom unit
+            document.getElementById('add-custom-unit').addEventListener('click', function() {
+                const name = document.getElementById('custom-unit-name').value.trim();
+                const symbol = document.getElementById('custom-unit-symbol').value.trim();
+                const baseUnitValue = document.getElementById('base-unit').value;
+                const factor = parseFloat(document.getElementById('conversion-factor').value);
+                
+                if (!name || !symbol || !baseUnitValue || isNaN(factor)) {
+                    showNotification('Please fill in all fields with valid values', 'error');
+                    return;
+                }
+                
+                if (factor <= 0) {
+                    showNotification('Conversion factor must be a positive number', 'error');
+                    return;
+                }
+                
+                const baseUnitObj = JSON.parse(baseUnitValue);
+                
+                const customUnit = {
+                    name: name,
+                    symbol: symbol,
+                    baseUnit: baseUnitValue,
+                    factor: factor,
+                    category: 'custom'
+                };
+                
+                let customUnits = JSON.parse(localStorage.getItem('unitopia_custom_units')) || [];
+                customUnits.push(customUnit);
+                localStorage.setItem('unitopia_custom_units', JSON.stringify(customUnits));
+                
+                // Reset form
+                document.getElementById('custom-unit-name').value = '';
+                document.getElementById('custom-unit-symbol').value = '';
+                document.getElementById('base-unit').selectedIndex = 0;
+                document.getElementById('conversion-factor').value = '';
+                
+                // Update unit selectors
+                populateUnitSelectors();
+                
+                // Show success message
+                showNotification(`Custom unit "${name} (${symbol})" created successfully!`, 'success');
+            });
+            
+            // Show notification
+            function showNotification(message, type) {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.textContent = message;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('show');
+                }, 10);
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 5000);
+            }
+            
+            // Event listeners for conversion
+            document.getElementById('input-value').addEventListener('input', convertUnits);
+            document.getElementById('input-unit').addEventListener('change', convertUnits);
+            document.getElementById('output-unit').addEventListener('change', convertUnits);
+            
+            // Initialize the converter
+            populateUnitSelectors();
+            
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Add hover effect to glass cards
+            document.querySelectorAll('.glass-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        });
     </script>
+
+    <style>
+        /* Notification styles */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background: var(--primary-blue);
+            border-left: 4px solid var(--neon-blue);
+            border-radius: var(--radius-md);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .notification.success {
+            border-left-color: #00FFAA;
+        }
+        
+        .notification.error {
+            border-left-color: #FF5555;
+        }
+        
+        .notification button {
+            background: none;
+            border: none;
+            color: var(--neon-blue);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Glass card hover effect */
+        .glass-card {
+            --mouse-x: 0px;
+            --mouse-y: 0px;
+        }
+        
+        .glass-card::after {
+            background: radial-gradient(
+                600px circle at var(--mouse-x) var(--mouse-y),
+                rgba(0, 240, 255, 0.1),
+                transparent 40%
+            );
+        }
+    </style>
 </body>
 </html>
