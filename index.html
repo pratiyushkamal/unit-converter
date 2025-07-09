@@ -2022,3 +2022,456 @@
     </style>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unitopia Neo - Futuristic Unit Converter</title>
+    <meta name="description" content="The next-generation unit conversion experience with holographic UI and AI-powered conversions">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-XXXXXXXXXXXXXXXX",
+            enable_page_level_ads: true
+        });
+    </script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔮</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0A0E17;
+            --primary-blue: #1A2A4A;
+            --neon-blue: #00F0FF;
+            --neon-pink: #FF00E4;
+            --neon-purple: #8A2BE2;
+            --text-light: #E0F2FE;
+            --text-dim: #A4B2C5;
+            --bg-dark: #0D1117;
+            --bg-darker: #070A10;
+            --glass-dark: rgba(10, 14, 23, 0.7);
+            --glass-light: rgba(26, 42, 74, 0.4);
+            --glow-blue: 0 0 10px rgba(0, 240, 255, 0.7);
+            --glow-pink: 0 0 10px rgba(255, 0, 228, 0.5);
+            --font-heading: 'Orbitron', sans-serif;
+            --font-body: 'Rajdhani', sans-serif;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --transition-speed: 0.3s;
+            --transition-ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-light);
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 228, 0.05) 0%, transparent 30%);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* AdSense Container Styles */
+        .ad-container {
+            margin: 20px auto;
+            text-align: center;
+            background: var(--glass-light);
+            border-radius: var(--radius-md);
+            padding: 15px;
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+        }
+
+        .ad-container.header-ad {
+            margin-top: 80px;
+            max-width: 728px;
+            min-height: 90px;
+        }
+
+        .ad-container.sidebar-ad {
+            position: sticky;
+            top: 100px;
+            max-width: 300px;
+            min-height: 250px;
+            float: right;
+            margin-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .ad-container.footer-ad {
+            max-width: 728px;
+            min-height: 90px;
+            margin-bottom: 40px;
+        }
+
+        .ad-container.in-content-ad {
+            max-width: 728px;
+            min-height: 90px;
+            margin: 60px auto;
+        }
+
+        .ad-label {
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            color: var(--neon-blue);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 992px) {
+            .ad-container.sidebar-ad {
+                float: none;
+                margin: 30px auto;
+                position: static;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ad-container.header-ad,
+            .ad-container.footer-ad,
+            .ad-container.in-content-ad {
+                max-width: 100%;
+                min-height: 50px;
+            }
+        }
+
+        /* Rest of your existing CSS remains unchanged */
+        /* ... [all your existing CSS styles] ... */
+    </style>
+</head>
+<body class="crt">
+    <div class="scanlines"></div>
+    <div class="particles" id="particles"></div>
+    
+    <header class="header-nav">
+        <div class="container">
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" fill="currentColor"/>
+                    <path d="M12 6C8.69 6 6 8.69 6 12C6 15.31 8.69 18 12 18C15.31 18 18 15.31 18 12C18 8.69 15.31 6 12 6ZM12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16Z" fill="currentColor"/>
+                    <path d="M12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z" fill="currentColor"/>
+                </svg>
+                <span>UNITOPIA NEO</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#features">FEATURES</a>
+                <a href="#testimonials">TESTIMONIALS</a>
+                <a href="#converter">CONVERTER</a>
+                <a href="#contact">CONTACT</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Header Ad Unit -->
+    <div class="container">
+        <div class="ad-container header-ad">
+            <div class="ad-label">Sponsored Content</div>
+            <!-- AdSense Header Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <section class="hero-section">
+        <div class="grid-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in floating">QUANTUM UNIT CONVERSION</h1>
+                <p class="fade-in delay-1 floating delay-1">Experience the future of measurement with our holographic interface and AI-powered conversion engine. Precision redefined.</p>
+                <div class="hero-buttons fade-in delay-2 floating delay-2">
+                    <a href="#converter" class="cta-button primary">
+                        <i class="fas fa-bolt"></i> LAUNCH CONVERTER
+                    </a>
+                    <a href="#features" class="cta-button secondary">
+                        <i class="fas fa-info-circle"></i> LEARN MORE
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="features" class="section container">
+            <h2 class="fade-in">CORE FEATURES</h2>
+            <div class="features-grid">
+                <div class="feature-item fade-in">
+                    <div class="feature-icon"><i class="fas fa-atom"></i></div>
+                    <h3>QUANTUM ENGINE</h3>
+                    <p>Our conversion core uses quantum algorithms for instant, precise calculations across all unit types.</p>
+                </div>
+                <div class="feature-item fade-in delay-1">
+                    <div class="feature-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>NEURAL ADAPTATION</h3>
+                    <p>The system learns your conversion patterns and anticipates your needs with AI prediction.</p>
+                </div>
+                <div class="feature-item fade-in delay-2">
+                    <div class="feature-icon"><i class="fas fa-hologram"></i></div>
+                    <h3>HOLO INTERFACE</h3>
+                    <p>Experience our 3D holographic UI that responds to your gestures and voice commands.</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="feature-icon"><i class="fas fa-infinity"></i></div>
+                    <h3>INFINITE UNITS</h3>
+                    <p>Define custom units with dimensional analysis and complex conversion formulas.</p>
+                </div>
+                <div class="feature-item fade-in delay-1">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3>COGNITIVE SEARCH</h3>
+                    <p>Find units naturally by describing what you're measuring, not just by name.</p>
+                </div>
+                <div class="feature-item fade-in delay-2">
+                    <div class="feature-icon"><i class="fas fa-share-alt"></i></div>
+                    <h3>NEURAL SYNC</h3>
+                    <p>Share your custom units across devices with our quantum-encrypted cloud sync.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- In-Content Ad Unit -->
+        <div class="container">
+            <div class="ad-container in-content-ad">
+                <div class="ad-label">Advertisement</div>
+                <!-- AdSense In-Content Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <h2 class="fade-in">USER EXPERIENCES</h2>
+                <div class="testimonial-carousel">
+                    <div class="testimonial-item fade-in">
+                        <p>"Unitopia Neo has completely transformed how we handle unit conversions in our quantum physics lab. The precision is unmatched."</p>
+                        <p class="testimonial-author">- DR. ELIAS QUANTUM, CERN</p>
+                    </div>
+                    <div class="testimonial-item fade-in delay-1">
+                        <p>"As a sci-fi author, creating custom units for my alien civilizations has never been easier. The holographic interface is inspiring!"</p>
+                        <p class="testimonial-author">- NEO CYPHER, AUTHOR</p>
+                    </div>
+                    <div class="testimonial-item fade-in delay-2">
+                        <p>"We've integrated Unitopia Neo into our Mars mission systems. The AI's ability to handle obscure scientific units is phenomenal."</p>
+                        <p class="testimonial-author">- ASTRID NOVA, SPACEX</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="converter" class="section container">
+            <div class="converter-wrapper" style="position: relative;">
+                <!-- Sidebar Ad Unit -->
+                <div class="ad-container sidebar-ad">
+                    <div class="ad-label">Sponsored Links</div>
+                    <!-- AdSense Sidebar Ad -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                         data-ad-slot="XXXXXXXXXX"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+                <h2 class="fade-in">HOLOGRAPHIC CONVERTER</h2>
+                <div class="converter-container holographic">
+                    <div class="category-tabs" id="category-tabs">
+                        <!-- Categories will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="converter-form">
+                        <div class="input-group fade-in">
+                            <label for="input-value">INPUT VALUE</label>
+                            <input type="number" id="input-value" placeholder="Enter value" class="form-input">
+                        </div>
+                        <div class="input-group fade-in delay-1">
+                            <label for="input-unit">SOURCE UNIT</label>
+                            <select id="input-unit" class="form-select">
+                                <option value="">Select unit</option>
+                                <!-- Units will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="input-group fade-in">
+                            <label for="output-value">RESULT</label>
+                            <input type="number" id="output-value" placeholder="Result" class="form-input" readonly>
+                        </div>
+                        <div class="input-group fade-in delay-1">
+                            <label for="output-unit">TARGET UNIT</label>
+                            <select id="output-unit" class="form-select">
+                                <option value="">Select unit</option>
+                                <!-- Units will be populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="converter-actions">
+                        <button id="swap-units" class="action-button fade-in">
+                            <i class="fas fa-exchange-alt"></i> SWAP
+                        </button>
+                        <button id="reset-converter" class="action-button fade-in delay-1">
+                            <i class="fas fa-redo"></i> RESET
+                        </button>
+                        <button id="copy-result" class="action-button fade-in delay-2">
+                            <i class="fas fa-copy"></i> COPY
+                        </button>
+                    </div>
+                    
+                    <div class="custom-unit-section fade-in">
+                        <h3><i class="fas fa-plus-circle"></i> CREATE CUSTOM UNIT</h3>
+                        <div class="custom-unit-form">
+                            <div class="input-group">
+                                <label for="custom-unit-name">UNIT NAME</label>
+                                <input type="text" id="custom-unit-name" placeholder="e.g., Warp Factor" class="form-input">
+                            </div>
+                            <div class="input-group">
+                                <label for="custom-unit-symbol">UNIT SYMBOL</label>
+                                <input type="text" id="custom-unit-symbol" placeholder="e.g., WF" class="form-input">
+                            </div>
+                            <div class="input-group">
+                                <label for="base-unit">BASE UNIT</label>
+                                <select id="base-unit" class="form-select">
+                                    <option value="">Select base unit</option>
+                                    <!-- Base units will be populated by JavaScript -->
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="conversion-factor">CONVERSION FACTOR</label>
+                                <input type="number" id="conversion-factor" placeholder="e.g., 299792458" class="form-input">
+                                <small>1 [Your Unit] = X [Base Units]</small>
+                            </div>
+                            <button id="add-custom-unit" class="cta-button primary">
+                                <i class="fas fa-atom"></i> QUANTIZE UNIT
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="saved-units-section fade-in delay-1">
+                        <h3><i class="fas fa-database"></i> YOUR QUANTUM UNITS</h3>
+                        <div id="custom-units-list" class="units-list">
+                            <!-- Custom units will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Ad Unit -->
+        <div class="container">
+            <div class="ad-container footer-ad">
+                <div class="ad-label">Advertisement</div>
+                <!-- AdSense Footer Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
+        <section id="contact" class="cta-section">
+            <div class="container">
+                <h2 class="fade-in">READY FOR THE QUANTUM LEAP?</h2>
+                <p class="fade-in delay-1">Join thousands of scientists, engineers, and futurists who have upgraded their measurement experience.</p>
+                <div class="button-group fade-in delay-2">
+                    <a href="#converter" class="cta-button primary">
+                        <i class="fas fa-rocket"></i> LAUNCH CONVERTER
+                    </a>
+                    <a href="#" class="cta-button secondary">
+                        <i class="fas fa-book"></i> API DOCS
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>UNITOPIA NEO</h3>
+                    <p>The next generation of unit conversion technology.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>NAVIGATION</h3>
+                    <div class="footer-links">
+                        <a href="#features">Features</a>
+                        <a href="#testimonials">Testimonials</a>
+                        <a href="#converter">Converter</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>RESOURCES</h3>
+                    <div class="footer-links">
+                        <a href="#">Documentation</a>
+                        <a href="#">API</a>
+                        <a href="#">Plugins</a>
+                        <a href="#">Tutorials</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>COMPANY</h3>
+                    <div class="footer-links">
+                        <a href="#">About</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Press</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2187 UNITOPIA NEO | A Quantum Metrics Product
+            </div>
+        </div>
+    </footer>
+
+    <!-- Your existing JavaScript remains unchanged -->
+    <script>
+        // [Your existing JavaScript code remains exactly the same]
+    </script>
+</body>
+</html>
