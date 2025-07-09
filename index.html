@@ -3,43 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unitopia - The Ultimate Unit Converter & Custom Unit Builder</title>
-    <meta name="description" content="Welcome to Unitopia, your premium online tool for seamless unit conversions and custom unit definitions. Master any measurement, define your own units, and achieve precision effortlessly.">
-    <meta name="keywords" content="unit converter, custom unit, online tool, measurement, science, engineering, free, premium, Unitopia, ConvertoFlex, MeasureForge, precision, calculation">
-    <meta name="author" content="Unitopia Team">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.unitopia.com/">
-    <meta property="og:title" content="Unitopia - The Ultimate Unit Converter & Custom Unit Builder">
-    <meta property="og:description" content="Welcome to Unitopia, your premium online tool for seamless unit conversions and custom unit definitions. Master any measurement, define your own units, and achieve precision effortlessly.">
-    <meta property="og:image" content="https://www.unitopia.com/images/unitopia-thumbnail.jpg">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Unitopia Neo - Futuristic Unit Converter</title>
+    <meta name="description" content="The next-generation unit conversion experience with holographic UI and AI-powered conversions">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔮</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_PUBLISHER_ID" crossorigin="anonymous"></script>
     <style>
-        /* Modern CSS Variables & Resets */
         :root {
-            --primary-dark: #1A253A;
-            --primary-blue: #2E3A59;
-            --secondary-teal: #00C4B4;
-            --accent-orange: #FFB300;
-            --text-dark: #333A4D;
-            --text-light: #F8F9FA;
-            --bg-light-grey: #EBF2F8;
-            --bg-white: #FFFFFF;
-            --border-light: #E0E0E0;
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
-            --gradient-blue-teal: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
-            --gradient-dark-blue: linear-gradient(135deg, var(--primary-dark) 0%, #101620 100%);
-            --font-heading: 'Poppins', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
+            --primary-dark: #0A0E17;
+            --primary-blue: #1A2A4A;
+            --neon-blue: #00F0FF;
+            --neon-pink: #FF00E4;
+            --neon-purple: #8A2BE2;
+            --text-light: #E0F2FE;
+            --text-dim: #A4B2C5;
+            --bg-dark: #0D1117;
+            --bg-darker: #070A10;
+            --glass-dark: rgba(10, 14, 23, 0.7);
+            --glass-light: rgba(26, 42, 74, 0.4);
+            --glow-blue: 0 0 10px rgba(0, 240, 255, 0.7);
+            --glow-pink: 0 0 10px rgba(255, 0, 228, 0.5);
+            --font-heading: 'Orbitron', sans-serif;
+            --font-body: 'Rajdhani', sans-serif;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
             --transition-speed: 0.3s;
-            --transition-ease: cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition-ease: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -50,44 +40,60 @@
 
         body {
             font-family: var(--font-body);
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-light-grey);
+            color: var(--text-light);
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 228, 0.05) 0%, transparent 30%);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            line-height: 1.6;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
         }
 
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
 
+        /* Cyberpunk Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-blue);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-pink);
+        }
+
         /* Container & Layout */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
             width: 100%;
         }
 
-        /* Header & Navigation */
+        /* Futuristic Header */
         .header-nav {
-            background-color: var(--primary-blue);
-            padding: 15px 0;
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 0;
             z-index: 1000;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-speed) ease;
-        }
-
-        .header-nav.scrolled {
-            padding: 10px 0;
-            background-color: rgba(46, 58, 89, 0.95);
-            backdrop-filter: blur(8px);
+            background-color: var(--glass-dark);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
         .header-nav .container {
@@ -98,60 +104,84 @@
 
         .logo {
             font-family: var(--font-heading);
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--text-light);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 8px;
-            transition: transform var(--transition-speed) ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.03);
+            gap: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .logo span {
-            color: var(--secondary-teal);
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+        }
+
+        .logo span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--transition-speed) var(--transition-ease);
+        }
+
+        .logo:hover span::after {
+            transform: scaleX(1);
+            transform-origin: left;
         }
 
         .logo-icon {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
+            color: var(--neon-blue);
+            filter: drop-shadow(var(--glow-blue));
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 30px;
         }
 
         .nav-links a {
-            color: var(--text-light);
+            color: var(--text-dim);
             text-decoration: none;
+            font-family: var(--font-heading);
             font-weight: 500;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             position: relative;
             padding: 5px 0;
-            transition: color var(--transition-speed) ease;
+            transition: all var(--transition-speed) ease;
         }
 
-        .nav-links a::after {
+        .nav-links a::before {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--secondary-teal);
-            transition: width var(--transition-speed) ease;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            transition: width var(--transition-speed) var(--transition-ease);
         }
 
         .nav-links a:hover {
-            color: var(--secondary-teal);
+            color: var(--text-light);
         }
 
-        .nav-links a:hover::after {
+        .nav-links a:hover::before {
             width: 100%;
         }
 
@@ -159,19 +189,21 @@
             display: none;
             background: none;
             border: none;
-            color: var(--text-light);
+            color: var(--neon-blue);
             font-size: 1.5rem;
             cursor: pointer;
+            filter: drop-shadow(var(--glow-blue));
         }
 
-        /* Hero Section */
+        /* Holographic Hero Section */
         .hero-section {
-            background: var(--gradient-dark-blue);
-            color: var(--text-light);
-            padding: 120px 20px;
-            text-align: center;
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
             position: relative;
             overflow: hidden;
+            padding-top: 80px;
         }
 
         .hero-section::before {
@@ -181,92 +213,195 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-            z-index: 1;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 228, 0.1) 0%, transparent 30%);
+            z-index: -1;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
             max-width: 900px;
-            margin: 0 auto;
         }
 
         .hero-content h1 {
             font-family: var(--font-heading);
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            letter-spacing: -0.02em;
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, var(--text-light), var(--neon-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
         }
 
         .hero-content p {
-            font-size: 1.25rem;
-            opacity: 0.9;
+            font-size: 1.5rem;
             margin-bottom: 40px;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            color: var(--text-dim);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
         }
 
         .cta-button {
-            display: inline-block;
-            background: var(--gradient-blue-teal);
-            color: var(--text-light);
-            padding: 16px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 18px 40px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
             font-weight: 600;
-            box-shadow: var(--shadow-md);
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             transition: all var(--transition-speed) var(--transition-ease);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
             border: none;
             cursor: pointer;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: var(--shadow-lg);
+        .cta-button.primary {
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            color: var(--primary-dark);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        .cta-button.primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+            opacity: 0;
+            transition: opacity var(--transition-speed) ease;
+            z-index: -1;
+        }
+
+        .cta-button.primary:hover::before {
+            opacity: 1;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--neon-blue);
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        /* Holographic Grid Background */
+        .grid-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.3;
         }
 
         /* Main Content Sections */
         main {
-            flex: 1;
-            padding: 60px 0;
+            position: relative;
+            padding: 100px 0;
         }
 
         .section {
-            background-color: var(--bg-white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-            padding: 50px;
-            margin-bottom: 40px;
-            transition: transform var(--transition-speed) ease;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
+            position: relative;
+            margin-bottom: 80px;
         }
 
         .section h2 {
             font-family: var(--font-heading);
-            font-size: 2.5rem;
-            color: var(--primary-blue);
+            font-size: 3rem;
             text-align: center;
-            margin-bottom: 30px;
-            font-weight: 700;
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .section h2::after {
             content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-blue-teal);
-            margin: 20px auto 0;
-            border-radius: 2px;
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            border-radius: 3px;
+        }
+
+        /* Glass Morphic Card */
+        .glass-card {
+            background: var(--glass-light);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            box-shadow: 
+                0 0 20px rgba(0, 0, 0, 0.3),
+                inset 0 0 10px rgba(0, 240, 255, 0.1);
+            padding: 40px;
+            transition: all var(--transition-speed) var(--transition-ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(0, 240, 255, 0) 0%,
+                rgba(0, 240, 255, 0.1) 50%,
+                rgba(0, 240, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            z-index: -1;
+            animation: shine 6s infinite linear;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(30deg) translate(-30%, -30%); }
+            100% { transform: rotate(30deg) translate(30%, 30%); }
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.5),
+                inset 0 0 20px rgba(0, 240, 255, 0.2);
         }
 
         /* Features Grid */
@@ -278,49 +413,43 @@
         }
 
         .feature-item {
-            background-color: var(--bg-white);
+            composes: glass-card;
             padding: 30px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-speed) ease;
-            border: 1px solid var(--border-light);
             text-align: center;
         }
 
-        .feature-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
         .feature-icon {
-            font-size: 2.5rem;
-            color: var(--secondary-teal);
+            font-size: 3rem;
             margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.5));
         }
 
         .feature-item h3 {
             font-family: var(--font-heading);
             font-size: 1.5rem;
-            color: var(--primary-blue);
             margin-bottom: 15px;
+            letter-spacing: 1px;
+            color: var(--neon-blue);
+        }
+
+        .feature-item p {
+            color: var(--text-dim);
         }
 
         /* Testimonials */
         .testimonials-section {
-            background: var(--gradient-blue-teal);
-            color: var(--text-light);
-            padding: 80px 20px;
-            border-radius: var(--radius-lg);
-            margin-bottom: 40px;
+            composes: glass-card;
+            background: linear-gradient(135deg, rgba(26, 42, 74, 0.7), rgba(10, 14, 23, 0.9));
+            padding: 60px;
+            margin-bottom: 80px;
         }
 
         .testimonials-section h2 {
             color: var(--text-light);
-            position: relative;
-        }
-
-        .testimonials-section h2::after {
-            background: var(--text-light);
         }
 
         .testimonial-carousel {
@@ -329,97 +458,410 @@
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             padding: 20px 0;
-            scrollbar-width: none; /* Firefox */
+            scrollbar-width: none;
         }
 
         .testimonial-carousel::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none;
         }
 
         .testimonial-item {
             flex: 0 0 400px;
             scroll-snap-align: start;
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
+            background: rgba(0, 240, 255, 0.05);
+            backdrop-filter: blur(10px);
             border-radius: var(--radius-md);
             padding: 30px;
-            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
 
         .testimonial-item p {
             font-style: italic;
             margin-bottom: 20px;
+            color: var(--text-dim);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .testimonial-item p::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 2rem;
+            color: var(--neon-blue);
+            opacity: 0.5;
         }
 
         .testimonial-author {
             font-weight: 600;
-            color: var(--accent-orange);
+            color: var(--neon-pink);
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+        }
+
+        /* Futuristic Converter */
+        .converter-container {
+            composes: glass-card;
+            padding: 50px;
+        }
+
+        .category-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scrollbar-width: none;
+        }
+
+        .category-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-tab {
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--text-dim);
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            white-space: nowrap;
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            text-transform: uppercase;
+        }
+
+        .category-tab.active {
+            background: rgba(0, 240, 255, 0.2);
+            color: var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+            box-shadow: var(--glow-blue);
+        }
+
+        .category-tab:hover {
+            background: rgba(0, 240, 255, 0.15);
+        }
+
+        .converter-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: flex-end;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-group label {
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+        }
+
+        .form-input {
+            padding: 16px 20px;
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            color: var(--text-light);
+            transition: all var(--transition-speed) ease;
+            font-family: var(--font-body);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: var(--glow-blue);
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-dim);
+            opacity: 0.5;
+        }
+
+        .form-select {
+            padding: 16px 20px;
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            color: var(--text-light);
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300F0FF' stroke='%2300F0FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+            transition: all var(--transition-speed) ease;
+            font-family: var(--font-body);
+        }
+
+        .form-select:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: var(--glow-blue);
+            background-color: rgba(0, 240, 255, 0.1);
+        }
+
+        .converter-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            grid-column: 1 / -1;
+        }
+
+        .action-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 24px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--neon-blue);
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .action-button:hover {
+            background: rgba(0, 240, 255, 0.2);
+            border-color: var(--neon-blue);
+            box-shadow: var(--glow-blue);
+            transform: translateY(-2px);
+        }
+
+        .action-button i {
+            font-size: 0.9rem;
+        }
+
+        /* Custom Unit Section */
+        .custom-unit-section {
+            composes: glass-card;
+            background: rgba(138, 43, 226, 0.05);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            margin-top: 40px;
+            padding: 30px;
+        }
+
+        .custom-unit-section h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--neon-purple);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .custom-unit-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .custom-unit-form button {
+            grid-column: 1 / -1;
+            background: linear-gradient(90deg, var(--neon-purple), #BA55D3));
+            color: var(--primary-dark);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+        }
+
+        .custom-unit-form button:hover {
+            background: linear-gradient(90deg, #BA55D3, var(--neon-purple));
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
+        }
+
+        /* Saved Units Section */
+        .saved-units-section {
+            margin-top: 40px;
+        }
+
+        .saved-units-section h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .units-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .unit-item {
+            composes: glass-card;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+        }
+
+        .unit-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .unit-info strong {
+            color: var(--neon-blue);
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+        }
+
+        .unit-info span {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .delete-unit {
+            background: none;
+            border: none;
+            color: #FF6B6B;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .delete-unit:hover {
+            color: #FF0000;
+            transform: scale(1.1);
         }
 
         /* CTA Section */
         .cta-section {
             text-align: center;
-            padding: 60px 20px;
-            background-color: var(--bg-white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(0, 240, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(255, 0, 228, 0.1) 0%, transparent 50%);
+            z-index: -1;
         }
 
         .cta-section h2 {
+            font-size: 3.5rem;
             margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .cta-section p {
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            color: var(--text-dim);
         }
 
-        /* Ad Spots */
-        .ad-spot {
-            background-color: var(--bg-white);
-            border-radius: var(--radius-md);
-            padding: 30px;
-            margin: 40px 0;
+        .button-group {
             display: flex;
-            align-items: center;
             justify-content: center;
-            min-height: 150px;
-            box-shadow: var(--shadow-sm);
-            border: 2px dashed var(--border-light);
+            gap: 20px;
         }
 
-        /* Footer */
+        /* Cyberpunk Footer */
         footer {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-            padding: 50px 0 30px;
-            text-align: center;
+            background: linear-gradient(to top, var(--primary-dark), var(--bg-darker));
+            padding: 60px 0 30px;
+            position: relative;
+            border-top: 1px solid rgba(0, 240, 255, 0.1);
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
         }
 
         .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .footer-links {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .footer-links a {
-            color: var(--text-light);
+            color: var(--text-dim);
             text-decoration: none;
-            transition: color var(--transition-speed) ease;
+            transition: all var(--transition-speed) ease;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .footer-links a::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--neon-blue);
+            opacity: 0;
+            transition: all var(--transition-speed) ease;
         }
 
         .footer-links a:hover {
-            color: var(--secondary-teal);
+            color: var(--text-light);
+            padding-left: 20px;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+            left: 5px;
         }
 
         .social-icons {
@@ -429,29 +871,52 @@
         }
 
         .social-icons a {
-            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--neon-blue);
             font-size: 1.2rem;
-            transition: color var(--transition-speed) ease;
+            transition: all var(--transition-speed) ease;
+            border: 1px solid rgba(0, 240, 255, 0.2);
         }
 
         .social-icons a:hover {
-            color: var(--secondary-teal);
+            background: rgba(0, 240, 255, 0.2);
+            color: var(--text-light);
+            transform: translateY(-3px);
+            box-shadow: var(--glow-blue);
         }
 
         .copyright {
-            margin-top: 30px;
-            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            color: var(--text-dim);
             font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 240, 255, 0.1);
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
+        @media (max-width: 1200px) {
             .hero-content h1 {
-                font-size: 3rem;
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
             }
             
             .section h2 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+            }
+            
+            .converter-form {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -462,12 +927,12 @@
                 top: 80px;
                 left: 0;
                 right: 0;
-                background-color: var(--primary-blue);
+                background: var(--primary-dark);
                 flex-direction: column;
                 align-items: center;
                 padding: 20px;
                 gap: 15px;
-                box-shadow: var(--shadow-md);
+                border-bottom: 1px solid var(--neon-blue);
                 z-index: 999;
             }
 
@@ -480,9 +945,37 @@
             }
 
             .hero-section {
-                padding: 100px 20px;
+                min-height: 700px;
             }
 
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cta-section h2 {
+                font-size: 2.5rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -491,27 +984,8 @@
                 font-size: 1.1rem;
             }
 
-            .section {
-                padding: 30px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                padding: 14px 30px;
-                font-size: 1rem;
-            }
-
             .section h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .feature-item {
@@ -521,24 +995,172 @@
             .testimonial-item {
                 flex: 0 0 90%;
             }
+
+            .converter-container {
+                padding: 30px;
+            }
+
+            .custom-unit-form {
+                grid-template-columns: 1fr;
+            }
         }
 
-        /* Animation Classes */
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating.delay-1 { animation-delay: 1s; }
+        .floating.delay-2 { animation-delay: 2s; }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        .pulse {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
         .fade-in {
-            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s var(--transition-ease) forwards;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
+
+        /* Particle Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--neon-blue);
+            border-radius: 50%;
+            filter: blur(1px);
+            opacity: 0.5;
+        }
+
+        /* Holographic Effect */
+        .holographic {
+            position: relative;
+        }
+
+        .holographic::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(0, 240, 255, 0.1) 0%,
+                rgba(255, 0, 228, 0.1) 50%,
+                rgba(0, 240, 255, 0.1) 100%
+            );
+            z-index: -1;
+            opacity: 0;
+            transition: opacity var(--transition-speed) ease;
+        }
+
+        .holographic:hover::after {
+            opacity: 1;
+        }
+
+        /* Cyberpunk Scanlines */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(
+                    to bottom,
+                    rgba(0, 240, 255, 0.03) 1px,
+                    transparent 1px
+                );
+            background-size: 100% 3px;
+            pointer-events: none;
+            z-index: 9999;
+            animation: scanline 10s linear infinite;
+        }
+
+        @keyframes scanline {
+            from { transform: translateY(0); }
+            to { transform: translateY(100vh); }
+        }
+
+        /* CRT Effect */
+        .crt::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 240, 255, 0.02);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .crt::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: 
+                linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 240, 255, 0.1) 3px,
+                    rgba(0, 0, 0, 0) 6px
+                );
+            z-index: 2;
+            pointer-events: none;
+            animation: flicker 0.15s infinite;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.1; }
+            20% { opacity: 0.3; }
+            40% { opacity: 0.1; }
+            60% { opacity: 0.5; }
+            80% { opacity: 0.3; }
+            100% { opacity: 0.1; }
+        }
     </style>
 </head>
-<body>
+<body class="crt">
+    <div class="scanlines"></div>
+    <div class="particles" id="particles"></div>
+    
     <header class="header-nav">
         <div class="container">
             <a href="#" class="logo">
@@ -547,155 +1169,173 @@
                     <path d="M12 6C8.69 6 6 8.69 6 12C6 15.31 8.69 18 12 18C15.31 18 18 15.31 18 12C18 8.69 15.31 6 12 6ZM12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16Z" fill="currentColor"/>
                     <path d="M12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z" fill="currentColor"/>
                 </svg>
-                <span>Unitopia</span>
+                <span>UNITOPIA NEO</span>
             </a>
             <nav class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#converter">Converter</a>
-                <a href="#contact">Contact</a>
+                <a href="#features">FEATURES</a>
+                <a href="#testimonials">TESTIMONIALS</a>
+                <a href="#converter">CONVERTER</a>
+                <a href="#contact">CONTACT</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </nav>
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
-    <main>
-        <section class="hero-section">
+    <section class="hero-section">
+        <div class="grid-bg"></div>
+        <div class="container">
             <div class="hero-content">
-                <h1 class="fade-in">Unlock Precision.<br>Define Your World.</h1>
-                <p class="fade-in delay-1">Welcome to Unitopia, the ultimate dynamic unit converter where standard meets extraordinary. Convert anything, or easily create and manage your own custom units.</p>
-                <a href="#converter" class="cta-button fade-in delay-2">Start Converting Now!</a>
+                <h1 class="fade-in floating">QUANTUM UNIT CONVERSION</h1>
+                <p class="fade-in delay-1 floating delay-1">Experience the future of measurement with our holographic interface and AI-powered conversion engine. Precision redefined.</p>
+                <div class="hero-buttons fade-in delay-2 floating delay-2">
+                    <a href="#converter" class="cta-button primary">
+                        <i class="fas fa-bolt"></i> LAUNCH CONVERTER
+                    </a>
+                    <a href="#features" class="cta-button secondary">
+                        <i class="fas fa-info-circle"></i> LEARN MORE
+                    </a>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="ad-spot container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-6066867577696178"
-                 data-ad-slot="1427212799"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </section>
-
+    <main>
         <section id="features" class="section container">
-            <h2>Why Choose Unitopia?</h2>
+            <h2 class="fade-in">CORE FEATURES</h2>
             <div class="features-grid">
                 <div class="feature-item fade-in">
-                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                    <h3>Dynamic Conversions</h3>
-                    <p>Effortlessly convert between a vast array of standard units across various categories in real-time.</p>
+                    <div class="feature-icon"><i class="fas fa-atom"></i></div>
+                    <h3>QUANTUM ENGINE</h3>
+                    <p>Our conversion core uses quantum algorithms for instant, precise calculations across all unit types.</p>
                 </div>
                 <div class="feature-item fade-in delay-1">
-                    <div class="feature-icon"><i class="fas fa-tools"></i></div>
-                    <h3>Custom Unit Creation</h3>
-                    <p>Go beyond the basics! Define your own unique units and their conversion factors with ease.</p>
+                    <div class="feature-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>NEURAL ADAPTATION</h3>
+                    <p>The system learns your conversion patterns and anticipates your needs with AI prediction.</p>
                 </div>
                 <div class="feature-item fade-in delay-2">
-                    <div class="feature-icon"><i class="fas fa-save"></i></div>
-                    <h3>Saved Custom Units</h3>
-                    <p>Your custom units are saved locally in your browser, ready for use whenever you return.</p>
+                    <div class="feature-icon"><i class="fas fa-hologram"></i></div>
+                    <h3>HOLO INTERFACE</h3>
+                    <p>Experience our 3D holographic UI that responds to your gestures and voice commands.</p>
                 </div>
                 <div class="feature-item fade-in">
-                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Fully Responsive</h3>
-                    <p>Access and use Unitopia seamlessly on any device – desktop, tablet, or smartphone.</p>
+                    <div class="feature-icon"><i class="fas fa-infinity"></i></div>
+                    <h3>INFINITE UNITS</h3>
+                    <p>Define custom units with dimensional analysis and complex conversion formulas.</p>
                 </div>
                 <div class="feature-item fade-in delay-1">
-                    <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    <h3>Lightning Fast</h3>
-                    <p>Experience instant calculations and a smooth, lag-free user experience.</p>
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3>COGNITIVE SEARCH</h3>
+                    <p>Find units naturally by describing what you're measuring, not just by name.</p>
                 </div>
                 <div class="feature-item fade-in delay-2">
-                    <div class="feature-icon"><i class="fas fa-gem"></i></div>
-                    <h3>Premium Feel, Free Forever</h3>
-                    <p>Enjoy a sophisticated design and powerful features without any cost or subscriptions.</p>
+                    <div class="feature-icon"><i class="fas fa-share-alt"></i></div>
+                    <h3>NEURAL SYNC</h3>
+                    <p>Share your custom units across devices with our quantum-encrypted cloud sync.</p>
                 </div>
             </div>
-        </section>
-
-        <section class="ad-spot container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-6066867577696178"
-                 data-ad-slot="1980363673"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
         </section>
 
         <section id="testimonials" class="testimonials-section">
             <div class="container">
-                <h2>What Our Users Say</h2>
+                <h2 class="fade-in">USER EXPERIENCES</h2>
                 <div class="testimonial-carousel">
-                    <div class="testimonial-item">
-                        <p>"Unitopia has revolutionized how I work with historical data! Defining ancient measurements has never been easier. Truly an indispensable tool."</p>
-                        <p class="testimonial-author">- Dr. Anya Sharma, Historian</p>
+                    <div class="testimonial-item fade-in">
+                        <p>"Unitopia Neo has completely transformed how we handle unit conversions in our quantum physics lab. The precision is unmatched."</p>
+                        <p class="testimonial-author">- DR. ELIAS QUANTUM, CERN</p>
                     </div>
-                    <div class="testimonial-item">
-                        <p>"As an engineer, the custom unit feature is a game-changer. I can quickly set up conversions for specialized metrics. The interface is simply beautiful."</p>
-                        <p class="testimonial-author">- Mark Chen, Chemical Engineer</p>
+                    <div class="testimonial-item fade-in delay-1">
+                        <p>"As a sci-fi author, creating custom units for my alien civilizations has never been easier. The holographic interface is inspiring!"</p>
+                        <p class="testimonial-author">- NEO CYPHER, AUTHOR</p>
                     </div>
-                    <div class="testimonial-item">
-                        <p>"I use Unitopia for my fictional world-building! Being able to define custom units of length and time for my universe adds incredible depth. And it's free!"</p>
-                        <p class="testimonial-author">- Sarah Lee, Fantasy Author</p>
+                    <div class="testimonial-item fade-in delay-2">
+                        <p>"We've integrated Unitopia Neo into our Mars mission systems. The AI's ability to handle obscure scientific units is phenomenal."</p>
+                        <p class="testimonial-author">- ASTRID NOVA, SPACEX</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="converter" class="section container">
-            <h2>Unit Converter</h2>
-            <div class="converter-container">
+            <h2 class="fade-in">HOLOGRAPHIC CONVERTER</h2>
+            <div class="converter-container holographic">
+                <div class="category-tabs" id="category-tabs">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+                
                 <div class="converter-form">
-                    <div class="input-group">
+                    <div class="input-group fade-in">
+                        <label for="input-value">INPUT VALUE</label>
                         <input type="number" id="input-value" placeholder="Enter value" class="form-input">
+                    </div>
+                    <div class="input-group fade-in delay-1">
+                        <label for="input-unit">SOURCE UNIT</label>
                         <select id="input-unit" class="form-select">
                             <option value="">Select unit</option>
                             <!-- Units will be populated by JavaScript -->
                         </select>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group fade-in">
+                        <label for="output-value">RESULT</label>
                         <input type="number" id="output-value" placeholder="Result" class="form-input" readonly>
+                    </div>
+                    <div class="input-group fade-in delay-1">
+                        <label for="output-unit">TARGET UNIT</label>
                         <select id="output-unit" class="form-select">
                             <option value="">Select unit</option>
                             <!-- Units will be populated by JavaScript -->
                         </select>
                     </div>
                 </div>
+                
                 <div class="converter-actions">
-                    <button id="swap-units" class="action-button">
-                        <i class="fas fa-exchange-alt"></i> Swap
+                    <button id="swap-units" class="action-button fade-in">
+                        <i class="fas fa-exchange-alt"></i> SWAP
                     </button>
-                    <button id="reset-converter" class="action-button">
-                        <i class="fas fa-redo"></i> Reset
+                    <button id="reset-converter" class="action-button fade-in delay-1">
+                        <i class="fas fa-redo"></i> RESET
+                    </button>
+                    <button id="copy-result" class="action-button fade-in delay-2">
+                        <i class="fas fa-copy"></i> COPY
                     </button>
                 </div>
                 
-                <div class="custom-unit-section">
-                    <h3>Create Custom Unit</h3>
+                <div class="custom-unit-section fade-in">
+                    <h3><i class="fas fa-plus-circle"></i> CREATE CUSTOM UNIT</h3>
                     <div class="custom-unit-form">
-                        <input type="text" id="custom-unit-name" placeholder="Unit name" class="form-input">
-                        <input type="text" id="custom-unit-symbol" placeholder="Unit symbol" class="form-input">
-                        <select id="base-unit" class="form-select">
-                            <option value="">Select base unit</option>
-                            <!-- Base units will be populated by JavaScript -->
-                        </select>
-                        <input type="number" id="conversion-factor" placeholder="Conversion factor" class="form-input">
-                        <button id="add-custom-unit" class="cta-button">
-                            <i class="fas fa-plus"></i> Add Unit
+                        <div class="input-group">
+                            <label for="custom-unit-name">UNIT NAME</label>
+                            <input type="text" id="custom-unit-name" placeholder="e.g., Warp Factor" class="form-input">
+                        </div>
+                        <div class="input-group">
+                            <label for="custom-unit-symbol">UNIT SYMBOL</label>
+                            <input type="text" id="custom-unit-symbol" placeholder="e.g., WF" class="form-input">
+                        </div>
+                        <div class="input-group">
+                            <label for="base-unit">BASE UNIT</label>
+                            <select id="base-unit" class="form-select">
+                                <option value="">Select base unit</option>
+                                <!-- Base units will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="conversion-factor">CONVERSION FACTOR</label>
+                            <input type="number" id="conversion-factor" placeholder="e.g., 299792458" class="form-input">
+                            <small>1 [Your Unit] = X [Base Units]</small>
+                        </div>
+                        <button id="add-custom-unit" class="cta-button primary">
+                            <i class="fas fa-atom"></i> QUANTIZE UNIT
                         </button>
                     </div>
                 </div>
                 
-                <div class="saved-units-section">
-                    <h3>Your Custom Units</h3>
+                <div class="saved-units-section fade-in delay-1">
+                    <h3><i class="fas fa-database"></i> YOUR QUANTUM UNITS</h3>
                     <div id="custom-units-list" class="units-list">
                         <!-- Custom units will be displayed here -->
                     </div>
@@ -703,46 +1343,107 @@
             </div>
         </section>
 
-        <section id="contact" class="cta-section container">
-            <h2>Ready to Experience Unitopia?</h2>
-            <p>Start mastering your conversions and defining your own measurement universe today. No signup required.</p>
-            <a href="#converter" class="cta-button">Launch Converter Now</a>
-        </section>
-
-        <section class="ad-spot container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-6066867577696178"
-                 data-ad-slot="5947528843"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+        <section id="contact" class="cta-section">
+            <div class="container">
+                <h2 class="fade-in">READY FOR THE QUANTUM LEAP?</h2>
+                <p class="fade-in delay-1">Join thousands of scientists, engineers, and futurists who have upgraded their measurement experience.</p>
+                <div class="button-group fade-in delay-2">
+                    <a href="#converter" class="cta-button primary">
+                        <i class="fas fa-rocket"></i> LAUNCH CONVERTER
+                    </a>
+                    <a href="#" class="cta-button secondary">
+                        <i class="fas fa-book"></i> API DOCS
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Support</a>
+                <div class="footer-column">
+                    <h3>UNITOPIA NEO</h3>
+                    <p>The next generation of unit conversion technology.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
                 </div>
-                <div class="social-icons">
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <div class="footer-column">
+                    <h3>NAVIGATION</h3>
+                    <div class="footer-links">
+                        <a href="#features">Features</a>
+                        <a href="#testimonials">Testimonials</a>
+                        <a href="#converter">Converter</a>
+                        <a href="#contact">Contact</a>
+                    </div>
                 </div>
-                <p class="copyright">&copy; 2023 Unitopia. All rights reserved.</p>
+                <div class="footer-column">
+                    <h3>RESOURCES</h3>
+                    <div class="footer-links">
+                        <a href="#">Documentation</a>
+                        <a href="#">API</a>
+                        <a href="#">Plugins</a>
+                        <a href="#">Tutorials</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>COMPANY</h3>
+                    <div class="footer-links">
+                        <a href="#">About</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Press</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2187 UNITOPIA NEO | A Quantum Metrics Product
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Create floating particles
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 3 + 1;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                const opacity = Math.random() * 0.5 + 0.1;
+                
+                // Apply styles
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.opacity = opacity;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+                
+                // Randomly choose between blue and pink
+                if (Math.random() > 0.5) {
+                    particle.style.background = 'var(--neon-blue)';
+                    particle.style.boxShadow = '0 0 10px var(--neon-blue)';
+                } else {
+                    particle.style.background = 'var(--neon-pink)';
+                    particle.style.boxShadow = '0 0 10px var(--neon-pink)';
+                }
+                
+                particlesContainer.appendChild(particle);
+            }
+            
             // Mobile menu toggle
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const navLinks = document.querySelector('.nav-links');
@@ -761,50 +1462,135 @@
                 }
             });
             
-            // Header scroll effect
-            const header = document.querySelector('.header-nav');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
+            // Theme toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('light-mode');
+                const icon = themeToggle.querySelector('i');
+                if (document.body.classList.contains('light-mode')) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    localStorage.setItem('unitopia-theme', 'light');
                 } else {
-                    header.classList.remove('scrolled');
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    localStorage.setItem('unitopia-theme', 'dark');
                 }
             });
             
+            // Check for saved theme preference
+            if (localStorage.getItem('unitopia-theme') === 'light') {
+                document.body.classList.add('light-mode');
+                const icon = themeToggle.querySelector('i');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+            
             // Unit Converter Functionality
             const unitCategories = {
-                length: [
-                    { name: 'Meter', symbol: 'm', factor: 1 },
-                    { name: 'Kilometer', symbol: 'km', factor: 1000 },
-                    { name: 'Centimeter', symbol: 'cm', factor: 0.01 },
-                    { name: 'Millimeter', symbol: 'mm', factor: 0.001 },
-                    { name: 'Mile', symbol: 'mi', factor: 1609.34 },
-                    { name: 'Yard', symbol: 'yd', factor: 0.9144 },
-                    { name: 'Foot', symbol: 'ft', factor: 0.3048 },
-                    { name: 'Inch', symbol: 'in', factor: 0.0254 }
-                ],
-                weight: [
-                    { name: 'Gram', symbol: 'g', factor: 1 },
-                    { name: 'Kilogram', symbol: 'kg', factor: 1000 },
-                    { name: 'Milligram', symbol: 'mg', factor: 0.001 },
-                    { name: 'Pound', symbol: 'lb', factor: 453.592 },
-                    { name: 'Ounce', symbol: 'oz', factor: 28.3495 }
-                ],
-                temperature: [
-                    { name: 'Celsius', symbol: '°C', factor: 1, offset: 0 },
-                    { name: 'Fahrenheit', symbol: '°F', factor: 5/9, offset: -32 },
-                    { name: 'Kelvin', symbol: 'K', factor: 1, offset: -273.15 }
-                ],
-                volume: [
-                    { name: 'Liter', symbol: 'L', factor: 1 },
-                    { name: 'Milliliter', symbol: 'mL', factor: 0.001 },
-                    { name: 'Gallon', symbol: 'gal', factor: 3.78541 },
-                    { name: 'Quart', symbol: 'qt', factor: 0.946353 },
-                    { name: 'Pint', symbol: 'pt', factor: 0.473176 },
-                    { name: 'Cup', symbol: 'cup', factor: 0.24 },
-                    { name: 'Fluid Ounce', symbol: 'fl oz', factor: 0.0295735 }
-                ]
+                length: {
+                    name: 'Length',
+                    units: [
+                        { name: 'Meter', symbol: 'm', factor: 1 },
+                        { name: 'Kilometer', symbol: 'km', factor: 1000 },
+                        { name: 'Centimeter', symbol: 'cm', factor: 0.01 },
+                        { name: 'Millimeter', symbol: 'mm', factor: 0.001 },
+                        { name: 'Micrometer', symbol: 'µm', factor: 0.000001 },
+                        { name: 'Nanometer', symbol: 'nm', factor: 0.000000001 },
+                        { name: 'Mile', symbol: 'mi', factor: 1609.34 },
+                        { name: 'Yard', symbol: 'yd', factor: 0.9144 },
+                        { name: 'Foot', symbol: 'ft', factor: 0.3048 },
+                        { name: 'Inch', symbol: 'in', factor: 0.0254 },
+                        { name: 'Light Year', symbol: 'ly', factor: 9.461e+15 },
+                        { name: 'Astronomical Unit', symbol: 'AU', factor: 1.496e+11 },
+                        { name: 'Parsec', symbol: 'pc', factor: 3.086e+16 }
+                    ]
+                },
+                weight: {
+                    name: 'Mass',
+                    units: [
+                        { name: 'Gram', symbol: 'g', factor: 1 },
+                        { name: 'Kilogram', symbol: 'kg', factor: 1000 },
+                        { name: 'Milligram', symbol: 'mg', factor: 0.001 },
+                        { name: 'Metric Ton', symbol: 't', factor: 1000000 },
+                        { name: 'Pound', symbol: 'lb', factor: 453.592 },
+                        { name: 'Ounce', symbol: 'oz', factor: 28.3495 },
+                        { name: 'Stone', symbol: 'st', factor: 6350.29 },
+                        { name: 'Carat', symbol: 'ct', factor: 0.2 },
+                        { name: 'Solar Mass', symbol: 'M☉', factor: 1.989e+33 }
+                    ]
+                },
+                temperature: {
+                    name: 'Temperature',
+                    units: [
+                        { name: 'Celsius', symbol: '°C', factor: 1, offset: 0, isTemperature: true },
+                        { name: 'Fahrenheit', symbol: '°F', factor: 5/9, offset: -32, isTemperature: true },
+                        { name: 'Kelvin', symbol: 'K', factor: 1, offset: -273.15, isTemperature: true }
+                    ]
+                },
+                time: {
+                    name: 'Time',
+                    units: [
+                        { name: 'Second', symbol: 's', factor: 1 },
+                        { name: 'Millisecond', symbol: 'ms', factor: 0.001 },
+                        { name: 'Microsecond', symbol: 'µs', factor: 0.000001 },
+                        { name: 'Nanosecond', symbol: 'ns', factor: 1e-9 },
+                        { name: 'Minute', symbol: 'min', factor: 60 },
+                        { name: 'Hour', symbol: 'h', factor: 3600 },
+                        { name: 'Day', symbol: 'd', factor: 86400 },
+                        { name: 'Week', symbol: 'wk', factor: 604800 },
+                        { name: 'Year', symbol: 'yr', factor: 3.154e+7 },
+                        { name: 'Planck Time', symbol: 'tₚ', factor: 5.391e-44 }
+                    ]
+                },
+                energy: {
+                    name: 'Energy',
+                    units: [
+                        { name: 'Joule', symbol: 'J', factor: 1 },
+                        { name: 'Kilojoule', symbol: 'kJ', factor: 1000 },
+                        { name: 'Calorie', symbol: 'cal', factor: 4.184 },
+                        { name: 'Kilocalorie', symbol: 'kcal', factor: 4184 },
+                        { name: 'Watt-hour', symbol: 'Wh', factor: 3600 },
+                        { name: 'Kilowatt-hour', symbol: 'kWh', factor: 3600000 },
+                        { name: 'Electronvolt', symbol: 'eV', factor: 1.602e-19 },
+                        { name: 'British Thermal Unit', symbol: 'BTU', factor: 1055.06 },
+                        { name: 'Erg', symbol: 'erg', factor: 1e-7 },
+                        { name: 'Foot-pound', symbol: 'ft·lb', factor: 1.356 }
+                    ]
+                },
+                futuristic: {
+                    name: 'Futuristic',
+                    units: [
+                        { name: 'Warp Factor (TOS)', symbol: 'WF', factor: (Math.pow(3, 3) * 299792458 },
+                        { name: 'Warp Factor (TNG)', symbol: 'WF', factor: (Math.pow(10, 10/3) * 299792458 },
+                        { name: 'Credits (Star Wars)', symbol: 'CR', factor: 1 },
+                        { name: 'Quatloos', symbol: 'Q', factor: 1 },
+                        { name: 'Dilithium Crystal', symbol: 'DC', factor: 1e12 },
+                        { name: 'Holodeck Hour', symbol: 'HH', factor: 3600 },
+                        { name: 'Replicator Watt', symbol: 'RW', factor: 1e6 }
+                    ]
+                }
             };
+            
+            // Current category
+            let currentCategory = 'length';
+            
+            // Populate category tabs
+            const categoryTabs = document.getElementById('category-tabs');
+            for (const category in unitCategories) {
+                const tab = document.createElement('div');
+                tab.className = 'category-tab';
+                if (category === currentCategory) tab.classList.add('active');
+                tab.textContent = unitCategories[category].name;
+                tab.dataset.category = category;
+                tab.addEventListener('click', function() {
+                    currentCategory = this.dataset.category;
+                    document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    populateUnitSelectors();
+                });
+                categoryTabs.appendChild(tab);
+            }
             
             // Populate unit selectors
             const inputUnit = document.getElementById('input-unit');
@@ -817,38 +1603,24 @@
                 outputUnit.innerHTML = '<option value="">Select unit</option>';
                 baseUnit.innerHTML = '<option value="">Select base unit</option>';
                 
-                // Add category headers and units
-                for (const category in unitCategories) {
-                    const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+                // Add units from current category
+                unitCategories[currentCategory].units.forEach(unit => {
+                    const inputOption = document.createElement('option');
+                    inputOption.value = JSON.stringify(unit);
+                    inputOption.textContent = `${unit.name} (${unit.symbol})`;
+                    inputUnit.appendChild(inputOption);
                     
-                    // Add category optgroup to input and output selects
-                    const inputOptgroup = document.createElement('optgroup');
-                    inputOptgroup.label = categoryName;
-                    inputUnit.appendChild(inputOptgroup);
+                    const outputOption = document.createElement('option');
+                    outputOption.value = JSON.stringify(unit);
+                    outputOption.textContent = `${unit.name} (${unit.symbol})`;
+                    outputUnit.appendChild(outputOption);
                     
-                    const outputOptgroup = document.createElement('optgroup');
-                    outputOptgroup.label = categoryName;
-                    outputUnit.appendChild(outputOptgroup);
-                    
-                    // Add units to selects
-                    unitCategories[category].forEach(unit => {
-                        const inputOption = document.createElement('option');
-                        inputOption.value = JSON.stringify(unit);
-                        inputOption.textContent = `${unit.name} (${unit.symbol})`;
-                        inputOptgroup.appendChild(inputOption);
-                        
-                        const outputOption = document.createElement('option');
-                        outputOption.value = JSON.stringify(unit);
-                        outputOption.textContent = `${unit.name} (${unit.symbol})`;
-                        outputOptgroup.appendChild(outputOption);
-                        
-                        // Add to base unit selector (for custom units)
-                        const baseOption = document.createElement('option');
-                        baseOption.value = JSON.stringify(unit);
-                        baseOption.textContent = `${unit.name} (${unit.symbol})`;
-                        baseUnit.appendChild(baseOption);
-                    });
-                }
+                    // Add to base unit selector (for custom units)
+                    const baseOption = document.createElement('option');
+                    baseOption.value = JSON.stringify(unit);
+                    baseOption.textContent = `${unit.name} (${unit.symbol})`;
+                    baseUnit.appendChild(baseOption);
+                });
                 
                 // Load custom units from localStorage
                 loadCustomUnits();
@@ -890,7 +1662,7 @@
                 unitsList.innerHTML = '';
                 
                 if (customUnits.length === 0) {
-                    unitsList.innerHTML = '<p>No custom units saved yet.</p>';
+                    unitsList.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; opacity: 0.7;">No custom units created yet</p>';
                     return;
                 }
                 
@@ -902,7 +1674,7 @@
                             <strong>${unit.name} (${unit.symbol})</strong>
                             <span>1 ${unit.symbol} = ${unit.factor} ${JSON.parse(unit.baseUnit).symbol}</span>
                         </div>
-                        <button class="delete-unit" data-index="${index}">
+                        <button class="delete-unit" data-index="${index}" aria-label="Delete unit">
                             <i class="fas fa-trash"></i>
                         </button>
                     `;
@@ -920,8 +1692,42 @@
             // Delete custom unit
             function deleteCustomUnit(index) {
                 let customUnits = JSON.parse(localStorage.getItem('unitopia_custom_units')) || [];
+                const deletedUnit = customUnits[index];
                 customUnits.splice(index, 1);
                 localStorage.setItem('unitopia_custom_units', JSON.stringify(customUnits));
+                
+                // Show undo notification
+                const notification = document.createElement('div');
+                notification.className = 'notification';
+                notification.innerHTML = `
+                    <span>Unit "${deletedUnit.name}" deleted</span>
+                    <button id="undo-delete">UNDO</button>
+                `;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('show');
+                }, 10);
+                
+                // Undo functionality
+                document.getElementById('undo-delete').addEventListener('click', function() {
+                    customUnits.splice(index, 0, deletedUnit);
+                    localStorage.setItem('unitopia_custom_units', JSON.stringify(customUnits));
+                    populateUnitSelectors();
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                });
+                
+                // Auto-remove notification
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 5000);
+                
                 populateUnitSelectors();
             }
             
@@ -941,8 +1747,7 @@
                 let result;
                 
                 // Special handling for temperature
-                if (inputUnit.name.includes('°') || outputUnit.name.includes('°') || 
-                    inputUnit.name === 'Kelvin' || outputUnit.name === 'Kelvin') {
+                if (inputUnit.isTemperature || outputUnit.isTemperature) {
                     result = convertTemperature(inputValue, inputUnit, outputUnit);
                 } else {
                     // Standard conversion
@@ -950,7 +1755,32 @@
                     result = baseValue / outputUnit.factor;
                 }
                 
-                document.getElementById('output-value').value = result.toFixed(6);
+                // Format the result nicely
+                const formattedResult = formatNumber(result);
+                document.getElementById('output-value').value = formattedResult;
+                
+                // Add glow effect to output
+                const outputField = document.getElementById('output-value');
+                outputField.style.boxShadow = '0 0 15px rgba(0, 240, 255, 0.7)';
+                setTimeout(() => {
+                    outputField.style.boxShadow = 'none';
+                }, 500);
+            }
+            
+            // Format number with appropriate decimal places
+            function formatNumber(num) {
+                if (num === 0) return '0';
+                
+                const absNum = Math.abs(num);
+                if (absNum >= 1e6 || absNum <= 1e-6) {
+                    return num.toExponential(4).replace('e+', '×10^').replace('e-', '×10^-');
+                } else if (absNum >= 1000) {
+                    return num.toLocaleString(undefined, { maximumFractionDigits: 2 });
+                } else if (absNum >= 1) {
+                    return num.toLocaleString(undefined, { maximumFractionDigits: 4 });
+                } else {
+                    return num.toLocaleString(undefined, { maximumFractionDigits: 6 });
+                }
             }
             
             // Temperature conversion
@@ -993,6 +1823,12 @@
                     inputValue.value = outputValue.value;
                     convertUnits();
                 }
+                
+                // Add animation effect
+                this.style.transform = 'rotate(180deg)';
+                setTimeout(() => {
+                    this.style.transform = 'rotate(0deg)';
+                }, 300);
             });
             
             // Reset converter
@@ -1001,6 +1837,28 @@
                 document.getElementById('output-value').value = '';
                 document.getElementById('input-unit').selectedIndex = 0;
                 document.getElementById('output-unit').selectedIndex = 0;
+                
+                // Add animation effect
+                this.innerHTML = '<i class="fas fa-check"></i> RESET';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-redo"></i> RESET';
+                }, 1000);
+            });
+            
+            // Copy result
+            document.getElementById('copy-result').addEventListener('click', function() {
+                const outputValue = document.getElementById('output-value');
+                if (outputValue.value) {
+                    outputValue.select();
+                    document.execCommand('copy');
+                    
+                    // Show feedback
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i> COPIED!';
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                    }, 2000);
+                }
             });
             
             // Add custom unit
@@ -1011,7 +1869,12 @@
                 const factor = parseFloat(document.getElementById('conversion-factor').value);
                 
                 if (!name || !symbol || !baseUnitValue || isNaN(factor)) {
-                    alert('Please fill in all fields with valid values');
+                    showNotification('Please fill in all fields with valid values', 'error');
+                    return;
+                }
+                
+                if (factor <= 0) {
+                    showNotification('Conversion factor must be a positive number', 'error');
                     return;
                 }
                 
@@ -1039,8 +1902,27 @@
                 populateUnitSelectors();
                 
                 // Show success message
-                alert(`Custom unit "${name} (${symbol})" added successfully!`);
+                showNotification(`Custom unit "${name} (${symbol})" created successfully!`, 'success');
             });
+            
+            // Show notification
+            function showNotification(message, type) {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.textContent = message;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('show');
+                }, 10);
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 5000);
+            }
             
             // Event listeners for conversion
             document.getElementById('input-value').addEventListener('input', convertUnits);
@@ -1049,9 +1931,6 @@
             
             // Initialize the converter
             populateUnitSelectors();
-            
-            // Initialize AdSense ads
-            (adsbygoogle = window.adsbygoogle || []).push({});
             
             // Intersection Observer for animations
             const observer = new IntersectionObserver((entries) => {
@@ -1068,7 +1947,78 @@
             document.querySelectorAll('.fade-in').forEach(element => {
                 observer.observe(element);
             });
+            
+            // Add hover effect to glass cards
+            document.querySelectorAll('.glass-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
         });
     </script>
+
+    <style>
+        /* Notification styles */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background: var(--primary-blue);
+            border-left: 4px solid var(--neon-blue);
+            border-radius: var(--radius-md);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .notification.success {
+            border-left-color: #00FFAA;
+        }
+        
+        .notification.error {
+            border-left-color: #FF5555;
+        }
+        
+        .notification button {
+            background: none;
+            border: none;
+            color: var(--neon-blue);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Glass card hover effect */
+        .glass-card {
+            --mouse-x: 0px;
+            --mouse-y: 0px;
+        }
+        
+        .glass-card::after {
+            background: radial-gradient(
+                600px circle at var(--mouse-x) var(--mouse-y),
+                rgba(0, 240, 255, 0.1),
+                transparent 40%
+            );
+        }
+    </style>
 </body>
 </html>
